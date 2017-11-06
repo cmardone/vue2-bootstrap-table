@@ -57,7 +57,7 @@ Install the vue-bootstrap-table [package](https://www.npmjs.org/package/vue2-boo
 
 
 Or add the js script to your html (download from [releases](https://github.com/jbaysolutions/vue2-bootstrap-table/releases)):
- 
+
     <script src="vue-bootstrap-table.js"></script>
 
 
@@ -113,7 +113,7 @@ Or add the js script to your html (download from [releases](https://github.com/j
             ]
         },
     });
-```` 
+````
 
 
 ````html
@@ -130,7 +130,7 @@ Or add the js script to your html (download from [releases](https://github.com/j
 
     >
     </vue-bootstrap-table>
-```` 
+````
 
 ## Configuration Props
 
@@ -207,6 +207,22 @@ Or add the js script to your html (download from [releases](https://github.com/j
             type: Number,
             required: false,
             default: 10,
+        },
+        /**
+         * Enable/disable page size change field, optional, default false
+         */
+        pageSizes: {
+            type: Array,
+            required: false,
+            default: [10, 25, 50, 100]
+        },
+        /**
+         * Enable/disable page size change field, optional, default [10]
+         */
+        showPageResizer: {
+            type: Boolean,
+            required: false,
+            default: false
         },
         /**
          * If loading of table is to be done through ajax, then this object must be set
