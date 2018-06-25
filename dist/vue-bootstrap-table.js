@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	__webpack_require__(2)
 	__vue_script__ = __webpack_require__(6)
 	if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
-	  console.warn("[vue-loader] src/VueBootstrapTable.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src\\VueBootstrapTable.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(46)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -90,7 +90,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-08a7e10e/VueBootstrapTable.vue"
+	  var id = "_v-75b67e3e/VueBootstrapTable.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -133,7 +133,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.vue-table {\n}\n\n/*#maindiv {\n        content: \" \";\n        box-sizing: border-box;\n        display:\n        table; width: 100%;\n    }\n*/\n.vue-table-loading .spinner {\n  border: 16px solid #f3f3f3; /* Light grey */\n  border-top: 16px solid #3498db; /* Blue */\n  border-radius: 50%;\n  width: 120px;\n  height: 120px;\n  -webkit-animation: spin 2s linear infinite;\n          animation: spin 2s linear infinite;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  margin: -60px 0 0 -60px;\n}\n\n@-webkit-keyframes spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n\n@keyframes spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n\n.vue-table-loading {\n  position: absolute;\n  z-index: 99;\n  background-color: #ddd;\n  opacity: 0.5;\n  width: 100%;\n  height: 100%;\n}\n\n.vue-table-loading-hidden {\n  display: none;\n}\n\ntable.vue-table thead > tr > th {\n  cursor: pointer;\n  padding-right: 30px !important;\n}\n\n/*.vue-table th.active {\n        color: red;\n    }*/\n\n.vue-table .arrow {\n  opacity: 1;\n  position: relative;\n}\n\n.vue-table .arrow:after {\n  position: absolute;\n  bottom: 8px;\n  right: 8px;\n  display: block;\n  font-family: \"Glyphicons Halflings\";\n  content: \"\\E150\";\n  /*\n        display: inline-block;\n        vertical-align: middle;\n        width: 0;\n        height: 0;\n        margin-left: 5px;\n        opacity: 0.66;*/\n}\n\n.vue-table .arrow.asc:after {\n  content: \"\\E155\";\n  /*\n        border-left: 4px solid transparent;\n        border-right: 4px solid transparent;\n        border-bottom: 4px solid #000;\n        */\n}\n\n.vue-table .arrow.dsc:after {\n  content: \"\\E156\";\n}\n\n.vue-table .editableField {\n  cursor: pointer;\n}\n\n/*.vue-table .selected-cell {\n        background-color: #F7C072;\n    }\n\n    .vue-table .selected-row {\n        background-color: #FAE1BE !important;\n    }*/\n", "", {"version":3,"sources":["/./src/VueBootstrapTable.vue?c93ae356"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAwFA;CACA;;AAEA;;;;;;EAMA;AACA;EACA,2BAAA,CAAA,gBAAA;EACA,+BAAA,CAAA,UAAA;EACA,mBAAA;EACA,aAAA;EACA,cAAA;EACA,2CAAA;UAAA,mCAAA;EACA,mBAAA;EACA,UAAA;EACA,SAAA;EACA,wBAAA;CACA;;AAEA;EACA;IACA,gCAAA;YAAA,wBAAA;GACA;EACA;IACA,kCAAA;YAAA,0BAAA;GACA;CACA;;AAPA;EACA;IACA,gCAAA;YAAA,wBAAA;GACA;EACA;IACA,kCAAA;YAAA,0BAAA;GACA;CACA;;AAEA;EACA,mBAAA;EACA,YAAA;EACA,uBAAA;EACA,aAAA;EACA,YAAA;EACA,aAAA;CACA;;AAEA;EACA,cAAA;CACA;;AAEA;EACA,gBAAA;EACA,+BAAA;CACA;;AAEA;;OAEA;;AAEA;EACA,WAAA;EACA,mBAAA;CACA;;AAEA;EACA,mBAAA;EACA,YAAA;EACA,WAAA;EACA,eAAA;EACA,oCAAA;EACA,iBAAA;EACA;;;;;;wBAMA;CACA;;AAEA;EACA,iBAAA;EACA;;;;UAIA;CACA;;AAEA;EACA,iBAAA;CACA;;AAEA;EACA,gBAAA;CACA;;AAEA;;;;;;OAMA","file":"VueBootstrapTable.vue","sourcesContent":["<template>\n  <div id=\"maindiv\" @click=\"closeDropdown\" @keyup.esc=\"closeDropdown\">\n    <!--<pre>{{columns}}</pre>-->\n    <!--<pre>{{$data}}</pre>-->\n    <div class=\"col-sm-6\">\n      <div v-if=\"showFilter\" style=\"padding-top: 10px;padding-bottom: 10px;\">\n        <div class=\"input-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Filter\" v-model=\"filterKey\">\n            <div class=\"input-group-addon\">\n              <i class=\"glyphicon glyphicon-search\"></i>\n            </div>\n          </div>\n        </div>\n    </div>\n    <div class=\"col-sm-6\">\n      <div v-if=\"showColumnPicker\" style=\"padding-top: 10px;padding-bottom: 10px;float:right;\">\n        <div class=\"btn-group\" :class=\"{'open' : columnMenuOpen}\">\n          <button @click.stop.prevent=\"columnMenuOpen = !columnMenuOpen\" @keyup.esc=\"columnMenuOpen = false\"\n            type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\"\n            aria-haspopup=\"true\">\n            Columns <span class=\"caret\"></span>\n          </button>\n          <ul class=\"dropdown-menu\">\n            <li v-for=\"column in displayCols\">\n              <a href=\"#\" @click.stop.prevent=\"toggleColumn(column)\">\n                <i v-if=\"column.visible\" class=\"glyphicon glyphicon-ok\"></i> {{column.title}}\n              </a>\n            </li>\n          </ul>\n        </div>\n      </div>\n      <div v-if=\"showPageResizer\" style=\"padding-top: 10px;padding-bottom: 10px;float:right;\">\n        <select class=\"form-control\" v-model=\"localPageSize\">\n          <option v-for=\"size in pageSizes\" v-bind:key=\"size\">{{ size }}</option>\n        </select>\n      </div>\n    </div>\n    <div class=\"col-sm-12\">\n      <div id=\"loadingdiv\" :class=\"{'vue-table-loading': this.loading , 'vue-table-loading-hidden': !this.loading}\">\n        <div class=\"spinner\"></div>\n      </div>\n      <table class=\"table table-bordered table-hover table-condensed table-striped vue-table\">\n        <thead>\n          <tr>\n            <th v-for=\"column in displayColsVisible\" @click=\"sortBy($event, column.name)\"\n              track-by=\"column\"\n              :class=\"getClasses(column)\">\n              {{ column.title }}\n            </th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr v-for=\"entry in filteredValuesSorted \" track-by=\"entry\" @click=\"rowClickHandler($event, entry)\">\n            <td v-for=\"column in displayColsVisible\" track-by=\"column\"\n              v-show=\"column.visible\" :class=\"column.cellstyle\">\n              <span v-if=\"column.renderfunction!==false\" v-html=\"column.renderfunction( column.name, entry )\"></span>\n              <span v-else-if=\"!column.editable\"> {{ entry[column.name] }} </span>\n              <value-field-section v-else\n                :entry=\"entry\"\n                :columnname=\"column.name\"></value-field-section>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n    <div v-if=\"paginated\" class=\"col-sm-12\">\n      <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"pagination bar\">\n        <div class=\"btn-group\" role=\"group\" aria-label=\"first page\">\n          <button type=\"button\" class=\"btn btn-default\" @click=\"page=1\">&laquo;</button>\n        </div>\n        <div class=\"btn-group\" role=\"group\" aria-label=\"pages\">\n          <button v-for=\"index in validPageNumbers\"\n            type=\"button\" class=\"btn btn-default\"\n            :class=\"{ active: page===index }\"\n            @click=\"page=index\">\n            {{index}}\n          </button>\n        </div>\n        <div class=\"btn-group\" v-if=\"showPaginationEtc\">...</div>\n        <div class=\"btn-group\" role=\"group\" aria-label=\"last page\">\n          <button type=\"button\" class=\"btn btn-default\" @click=\"page=maxPage\">&raquo;</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n\n<style>\n.vue-table {\n}\n\n/*#maindiv {\n        content: \" \";\n        box-sizing: border-box;\n        display:\n        table; width: 100%;\n    }\n*/\n.vue-table-loading .spinner {\n  border: 16px solid #f3f3f3; /* Light grey */\n  border-top: 16px solid #3498db; /* Blue */\n  border-radius: 50%;\n  width: 120px;\n  height: 120px;\n  animation: spin 2s linear infinite;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  margin: -60px 0 0 -60px;\n}\n\n@keyframes spin {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n.vue-table-loading {\n  position: absolute;\n  z-index: 99;\n  background-color: #ddd;\n  opacity: 0.5;\n  width: 100%;\n  height: 100%;\n}\n\n.vue-table-loading-hidden {\n  display: none;\n}\n\ntable.vue-table thead > tr > th {\n  cursor: pointer;\n  padding-right: 30px !important;\n}\n\n/*.vue-table th.active {\n        color: red;\n    }*/\n\n.vue-table .arrow {\n  opacity: 1;\n  position: relative;\n}\n\n.vue-table .arrow:after {\n  position: absolute;\n  bottom: 8px;\n  right: 8px;\n  display: block;\n  font-family: \"Glyphicons Halflings\";\n  content: \"\\e150\";\n  /*\n        display: inline-block;\n        vertical-align: middle;\n        width: 0;\n        height: 0;\n        margin-left: 5px;\n        opacity: 0.66;*/\n}\n\n.vue-table .arrow.asc:after {\n  content: \"\\e155\";\n  /*\n        border-left: 4px solid transparent;\n        border-right: 4px solid transparent;\n        border-bottom: 4px solid #000;\n        */\n}\n\n.vue-table .arrow.dsc:after {\n  content: \"\\e156\";\n}\n\n.vue-table .editableField {\n  cursor: pointer;\n}\n\n/*.vue-table .selected-cell {\n        background-color: #F7C072;\n    }\n\n    .vue-table .selected-row {\n        background-color: #FAE1BE !important;\n    }*/\n</style>\n<script>\nimport axios from \"axios\";\nimport qs from \"qs\";\nimport lodashorderby from \"lodash.orderby\";\nimport lodashincludes from \"lodash.includes\";\nimport lodashfindindex from \"lodash.findindex\";\n\n/* Field Section used for displaying and editing value of cell */\nvar valueFieldSection = {\n  template:\n    '<span v-if=\"!enabled\" @dblclick=\"toggleInput\" class=\"editableField\">{{this.entry[this.columnname]}}</span>' +\n    '<div v-else-if=\"enabled\" class=\"input-group\">' +\n    '  <input type=\"text\" class=\"form-control\" v-model=\"datavalue\" @keyup.enter=\"saveThis\" @keyup.esc=\"cancelThis\">' +\n    '  <span class=\"input-group-btn\">' +\n    '    <button class=\"btn btn-danger\" type=\"button\" @click=\"cancelThis\" ><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></button>' +\n    '    <button class=\"btn btn-primary\" type=\"button\" @click=\"saveThis\" ><span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span></button>' +\n    \"  </span>\" +\n    \"</div>\",\n  props: [\"entry\", \"columnname\"],\n  data: function() {\n    return {\n      enabled: false,\n      datavalue: \"\"\n    };\n  },\n  methods: {\n    saveThis: function() {\n      var originalValue = this.entry[this.columnname];\n      this.entry[this.columnname] = this.datavalue;\n      this.$parent.$emit(\n        \"cellDataModifiedEvent\",\n        originalValue,\n        this.datavalue,\n        this.columnname,\n        this.entry\n      );\n      this.enabled = !this.enabled;\n    },\n    cancelThis: function() {\n      this.datavalue = this.entry[this.columnname];\n      this.enabled = !this.enabled;\n    },\n    toggleInput: function() {\n      this.datavalue = this.entry[this.columnname];\n      this.enabled = !this.enabled;\n    }\n  }\n};\n\nexport default {\n  name: \"VueBootstrapTable\",\n  components: {\n    \"value-field-section\": valueFieldSection\n  },\n  props: {\n    /**\n      * The column titles, required\n      */\n    columns: {\n      type: Array,\n      required: true\n    },\n    /**\n      * The rows, an Array of objects\n      */\n    values: {\n      type: Array,\n      required: false\n    },\n    /**\n      * Enable/disable table sorting, optional, default true\n      */\n    sortable: {\n      type: Boolean,\n      required: false,\n      default: true\n    },\n    /**\n      * Enable/disable table multicolumn sorting, optional, default false.\n      * Also sortable must be enabled for this function to work.\n      */\n    multiColumnSortable: {\n      type: Boolean,\n      required: false,\n      default: false\n    },\n    /**\n      * Enable/disable input filter, optional, default false\n      */\n    showFilter: {\n      type: Boolean,\n      required: false,\n      default: false\n    },\n    /**\n      * Define if Filter search field is to work in a case Sensitive way. Default: true\n      */\n    filterCaseSensitive: {\n      type: Boolean,\n      required: false,\n      default: true\n    },\n    /**\n      * Enable/disable column picker to show/hide table columns, optional, default false\n      */\n    showColumnPicker: {\n      type: Boolean,\n      required: false,\n      default: false\n    },\n    /**\n      * Enable/disable pagination for the table, optional, default false\n      */\n    paginated: {\n      type: Boolean,\n      required: false,\n      default: false\n    },\n    /**\n      * If pagination is enabled defining the page size, optional, default 10\n      */\n    pageSize: {\n      type: Number,\n      required: false,\n      default: 10\n    },\n    /**\n      * Enable/disable page size change field, optional, default false\n      */\n    pageSizes: {\n      type: Array,\n      required: false,\n      default: [10, 25, 50, 100]\n    },\n    /**\n      * Enable/disable page size change field, optional, default [10]\n      */\n    showPageResizer: {\n      type: Boolean,\n      required: false,\n      default: false\n    },\n    /**\n      * If loading of table is to be done through ajax, then this object must be set\n      */\n    ajax: {\n      type: Object,\n      required: false,\n      default: function() {\n        return {\n          enabled: false,\n          url: \"\",\n          method: \"GET\",\n          delegate: false,\n          axiosConfig: {}\n        };\n      }\n    },\n    /**\n      * Function to handle row clicks\n      */\n    rowClickHandler: {\n      type: Function,\n      required: false,\n      default: function() {}\n    }\n  },\n  data: function() {\n    return {\n      filteredSize: 0,\n      filterKey: \"\",\n      sortKey: [],\n      sortOrders: {},\n      sortChanged: 1,\n      columnMenuOpen: false,\n      displayCols: [],\n      filteredValues: [],\n      page: 1,\n      localPageSize: 10,\n      echo: 0,\n      loading: false\n    };\n  },\n  mounted: function() {\n    this.$nextTick(function() {\n      this.loading = true;\n      this.setSortOrders();\n      var self = this;\n      this.columns.forEach(function(column) {\n        var obj = self.buildColumnObject(column);\n        self.displayCols.push(obj);\n      });\n      if (this.ajax.enabled) {\n        if (!this.ajax.delegate) {\n          this.loading = true;\n          this.fetchData(function(data) {\n            self.values = data.data;\n            self.processFilter();\n          });\n        } else this.processFilter();\n      } else this.processFilter();\n    });\n  },\n  created: function() {\n    var self = this;\n    this.$on(\"cellDataModifiedEvent\", self.fireCellDataModifiedEvent);\n    this.localPageSize = this.pageSize;\n  },\n  beforeDestroy: function() {\n    var self = this;\n    this.$off(\"cellDataModifiedEvent\", self.fireCellDataModifiedEvent);\n  },\n  watch: {\n    values: function() {\n      this.processFilter();\n    },\n    columns: function() {\n      this.displayCols = [];\n      var self = this;\n      this.columns.forEach(function(column) {\n        var obj = self.buildColumnObject(column);\n        self.displayCols.push(obj);\n      });\n      this.setSortOrders();\n    },\n    showFilter: function() {\n      this.filterKey = \"\";\n    },\n    showColumnPicker: function() {\n      this.columnMenuOpen = false;\n\n      this.displayCols.forEach(function(column) {\n        column.visible = true;\n      });\n    },\n    filterKey: function() {\n      // filter was updated, so resetting to page 1\n      this.page = 1;\n      this.processFilter();\n    },\n    sortKey: function() {\n      this.processFilter();\n    },\n    sortChanged: function() {\n      this.processFilter();\n    },\n    page: function() {\n      this.processFilter();\n    },\n    paginated: function() {\n      this.processFilter();\n    },\n    localPageSize: function(newValue) {\n      if (newValue > this.filteredValues.length) this.processFilter();\n    },\n    loading: function() {\n      /*document.getElementById(\"loadingdiv\").style.width = document.getElementById(\"maindiv\").getBoundingClientRect().width + \"px\";\n                document.getElementById(\"loadingdiv\").style.height = document.getElementById(\"maindiv\").getBoundingClientRect().height+\"px\";*/\n    }\n  },\n  computed: {\n    displayColsVisible: function() {\n      var displayColsVisible = [];\n      for (var a in this.displayCols) {\n        if (this.displayCols[a].visible)\n          displayColsVisible.push(this.displayCols[a]);\n      }\n      return displayColsVisible;\n    },\n    filteredValuesSorted: function() {\n      var tColsDir = [];\n      for (var i = 0, len = this.sortKey.length; i < len; i++) {\n        tColsDir.push(this.sortOrders[this.sortKey[i]].toLowerCase());\n      }\n      return lodashorderby(this.filteredValues, this.sortKey, tColsDir);\n    },\n    validPageNumbers: function() {\n      // 5 page max\n      var result = [];\n      var start = 1;\n      if (this.page > 3) start = this.page - 2;\n      for (var i = 0; start <= this.maxPage && i < 5; start++) {\n        result.push(start);\n        i++;\n      }\n      return result;\n    },\n    maxPage: function() {\n      return Math.ceil(this.filteredSize / this.localPageSize);\n    },\n    showPaginationEtc: function() {\n      var temp = 1;\n      if (this.page > 3) temp = this.page - 2;\n      return temp + 4 < this.maxPage;\n    }\n  },\n  methods: {\n    fireCellDataModifiedEvent: function(\n      originalValue,\n      newValue,\n      columnTitle,\n      entry\n    ) {\n      this.$parent.$emit(\n        \"cellDataModifiedEvent\",\n        originalValue,\n        newValue,\n        columnTitle,\n        entry\n      );\n    },\n    processFilter: function() {\n      var self = this;\n      this.loading = true;\n      if (this.ajax.enabled && this.ajax.delegate) {\n        this.fetchData(function(data) {\n          self.filteredSize = data.filtered;\n          self.filteredValues = data.data;\n          self.loading = false;\n        });\n      } else {\n        var result = this.values.filter(item => {\n          var good = false;\n          for (var col in self.displayColsVisible) {\n            if (self.filterCaseSensitive) {\n              if (\n                lodashincludes(\n                  item[self.displayColsVisible[col].name] + \"\",\n                  self.filterKey + \"\"\n                )\n              ) {\n                good = true;\n              }\n            } else {\n              if (\n                lodashincludes(\n                  (item[self.displayColsVisible[col].name] + \"\").toLowerCase(),\n                  (self.filterKey + \"\").toLowerCase()\n                )\n              ) {\n                good = true;\n              }\n            }\n          }\n          return good;\n        });\n\n        var tColsDir = [];\n        for (var i = 0, len = this.sortKey.length; i < len; i++) {\n          tColsDir.push(this.sortOrders[this.sortKey[i]].toLowerCase());\n        }\n\n        result = lodashorderby(result, this.sortKey, tColsDir);\n\n        this.filteredSize = result.length;\n        if (this.paginated) {\n          var startIndex = (this.page - 1) * this.localPageSize;\n          var tIndex = 0;\n          var tempResult = [];\n          while (tIndex < this.localPageSize) {\n            if (typeof result[startIndex + tIndex] !== \"undefined\")\n              tempResult.push(result[startIndex + tIndex]);\n            tIndex++;\n          }\n          self.filteredValues = tempResult;\n        } else self.filteredValues = result;\n        self.loading = false;\n      }\n    },\n    fetchData: function(dataCallBackFunction) {\n      var self = this;\n      var ajaxParameters = {\n        params: {}\n      };\n      this.echo++;\n      if (this.ajax.enabled && this.ajax.delegate) {\n        var tColsDir = [];\n        for (var i = 0, len = this.sortKey.length; i < len; i++) {\n          tColsDir.push(this.sortOrders[this.sortKey[i]].toLowerCase());\n        }\n        if (this.ajax.method === \"GET\") {\n          //COPY\n          ajaxParameters = JSON.parse(JSON.stringify(this.ajax.axiosConfig));\n          ajaxParameters.params = {};\n          ajaxParameters.params.sortcol = this.sortKey;\n          ajaxParameters.params.sortdir = tColsDir;\n          ajaxParameters.params.filter = this.filterKey;\n          if (self.paginated) {\n            ajaxParameters.params.page = this.page;\n            ajaxParameters.params.pagesize = this.localPageSize;\n          } else {\n            ajaxParameters.params.page = 1;\n            ajaxParameters.params.pagesize = null;\n          }\n          ajaxParameters.params.echo = this.echo;\n        }\n        if (this.ajax.method === \"POST\") {\n          ajaxParameters.sortcol = this.sortKey;\n          ajaxParameters.sortdir = tColsDir;\n          ajaxParameters.filter = this.filterKey;\n          if (self.paginated) {\n            ajaxParameters.page = this.page;\n            ajaxParameters.pagesize = this.localPageSize;\n          } else {\n            ajaxParameters.page = 1;\n            ajaxParameters.pagesize = null;\n          }\n          ajaxParameters.echo = this.echo;\n        }\n        //console.log(JSON.stringify(ajaxParameters));\n      }\n      if (this.ajax.enabled && !this.ajax.delegate) {\n        if (this.ajax.method === \"GET\") {\n          //COPY\n          ajaxParameters = JSON.parse(JSON.stringify(this.ajax.axiosConfig));\n          ajaxParameters.params = {};\n        }\n        if (this.ajax.method === \"POST\") {\n          // Do nothing at this point !\n        }\n      }\n      if (this.ajax.enabled && this.ajax.method === \"GET\") {\n        axios\n          .get(self.ajax.url, ajaxParameters)\n          .then(response => {\n            if (this.ajax.delegate) {\n              if (response.data.echo !== self.echo) {\n                return;\n              }\n            }\n            dataCallBackFunction(response.data);\n            this.$parent.$emit(\"ajaxLoadedEvent\", response.data);\n          })\n          .catch(e => {\n            this.$parent.$emit(\"ajaxLoadingError\", e);\n          });\n      }\n      if (this.ajax.enabled && this.ajax.method === \"POST\") {\n        axios\n          .post(\n            self.ajax.url,\n            qs.stringify(ajaxParameters),\n            this.ajax.axiosConfig\n          )\n          .then(response => {\n            if (this.ajax.delegate) {\n              if (response.data.echo !== self.echo) {\n                return;\n              }\n            }\n\n            dataCallBackFunction(response.data);\n            this.$parent.$emit(\"ajaxLoadedEvent\", response.data);\n          })\n          .catch(e => {\n            this.$parent.$emit(\"ajaxLoadingError\", e);\n          });\n      }\n    },\n    buildColumnObject: function(column) {\n      var obj = {};\n      obj.title = column.title;\n      if (typeof column.name !== \"undefined\") obj.name = column.name;\n      else obj.name = column.title;\n      if (typeof column.visible !== \"undefined\") obj.visible = column.visible;\n      else obj.visible = true;\n      if (typeof column.editable !== \"undefined\")\n        obj.editable = column.editable;\n      else obj.editable = false;\n      if (typeof column.renderfunction !== \"undefined\")\n        obj.renderfunction = column.renderfunction;\n      else obj.renderfunction = false;\n      if (typeof column.columnstyle !== \"undefined\")\n        obj.columnstyle = column.columnstyle;\n      else obj.columnstyle = \"\";\n      if (typeof column.cellstyle !== \"undefined\")\n        obj.cellstyle = column.cellstyle;\n      else obj.cellstyle = \"\";\n\n      return obj;\n    },\n    setSortOrders: function() {\n      this.sortKey = [];\n      var sortOrders = {};\n      this.columns.forEach(function(column) {\n        sortOrders[column.name] = \"\";\n      });\n      this.sortOrders = sortOrders;\n    },\n    sortBy: function(event, key) {\n      if (this.sortable) {\n        var self = this;\n\n        if (\n          !this.multiColumnSortable ||\n          (this.multiColumnSortable && !event.shiftKey)\n        ) {\n          this.sortKey = [key];\n          this.columns.forEach(function(column) {\n            if (column.name !== key) {\n              self.sortOrders[column.name] = \"\";\n            }\n          });\n        } else {\n          if (\n            lodashfindindex(this.sortKey, function(o) {\n              return o === key;\n            }) === -1\n          ) {\n            this.sortKey.push(key);\n          }\n        }\n        if (this.sortOrders[key] === \"\") {\n          this.sortOrders[key] = \"ASC\";\n        } else if (this.sortOrders[key] === \"ASC\") {\n          this.sortOrders[key] = \"DESC\";\n        } else {\n          this.sortOrders[key] = \"ASC\";\n        }\n\n        this.sortChanged = this.sortChanged * -1;\n      }\n    },\n    getClasses: function(column) {\n      var classes = [column.columnstyle];\n      var key = column.name;\n      if (this.sortable) {\n        classes.push(\"arrow\");\n        /*if (this.sortKey === key) {\n                        classes.push(\"active\");\n                    }*/\n        if (\n          lodashfindindex(this.sortKey, function(o) {\n            return o === key;\n          }) !== -1\n        ) {\n          classes.push(\"active\");\n        }\n\n        if (this.sortOrders[key] === \"ASC\") {\n          classes.push(\"asc\");\n        } else if (this.sortOrders[key] === \"DESC\") {\n          classes.push(\"dsc\");\n        }\n      }\n      return classes;\n    },\n    toggleColumn: function(column) {\n      column.visible = !column.visible;\n    },\n    closeDropdown: function() {\n      this.columnMenuOpen = false;\n    }\n  },\n  events: {}\n};\n</script>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*#maindiv {\n        content: \" \";\n        box-sizing: border-box;\n        display:\n        table; width: 100%;\n    }\n*/\n.vue-table-loading .spinner {\n  border: 16px solid #f3f3f3; /* Light grey */\n  border-top: 16px solid #3498db; /* Blue */\n  border-radius: 50%;\n  width: 120px;\n  height: 120px;\n  -webkit-animation: spin 2s linear infinite;\n          animation: spin 2s linear infinite;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  margin: -60px 0 0 -60px;\n}\n\n@-webkit-keyframes spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n\n@keyframes spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n\n.vue-table-loading {\n  position: absolute;\n  z-index: 99;\n  background-color: #ddd;\n  opacity: 0.5;\n  width: 100%;\n  height: 100%;\n}\n\n.vue-table-loading-hidden {\n  display: none;\n}\n\ntable.vue-table thead > tr > th {\n  cursor: pointer;\n  padding-right: 30px !important;\n}\n\n/*.vue-table th.active {\n        color: red;\n    }*/\n\n.vue-table .arrow {\n  opacity: 1;\n  position: relative;\n}\n\n.vue-table .arrow:after {\n  position: absolute;\n  bottom: 8px;\n  right: 8px;\n  display: block;\n  font-family: 'Glyphicons Halflings';\n  content: '\\E150';\n  /*\n        display: inline-block;\n        vertical-align: middle;\n        width: 0;\n        height: 0;\n        margin-left: 5px;\n        opacity: 0.66;*/\n}\n\n.vue-table .arrow.asc:after {\n  content: '\\E155';\n  /*\n        border-left: 4px solid transparent;\n        border-right: 4px solid transparent;\n        border-bottom: 4px solid #000;\n        */\n}\n\n.vue-table .arrow.dsc:after {\n  content: '\\E156';\n}\n\n.vue-table .editableField {\n  cursor: pointer;\n}\n\n/*.vue-table .selected-cell {\n        background-color: #F7C072;\n    }\n\n    .vue-table .selected-row {\n        background-color: #FAE1BE !important;\n    }*/\n", "", {"version":3,"sources":["/./src/VueBootstrapTable.vue?b9d854d2"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA+EA;;;;;;EAMA;AACA;EACA,2BAAA,CAAA,gBAAA;EACA,+BAAA,CAAA,UAAA;EACA,mBAAA;EACA,aAAA;EACA,cAAA;EACA,2CAAA;UAAA,mCAAA;EACA,mBAAA;EACA,UAAA;EACA,SAAA;EACA,wBAAA;CACA;;AAEA;EACA;IACA,gCAAA;YAAA,wBAAA;GACA;EACA;IACA,kCAAA;YAAA,0BAAA;GACA;CACA;;AAPA;EACA;IACA,gCAAA;YAAA,wBAAA;GACA;EACA;IACA,kCAAA;YAAA,0BAAA;GACA;CACA;;AAEA;EACA,mBAAA;EACA,YAAA;EACA,uBAAA;EACA,aAAA;EACA,YAAA;EACA,aAAA;CACA;;AAEA;EACA,cAAA;CACA;;AAEA;EACA,gBAAA;EACA,+BAAA;CACA;;AAEA;;OAEA;;AAEA;EACA,WAAA;EACA,mBAAA;CACA;;AAEA;EACA,mBAAA;EACA,YAAA;EACA,WAAA;EACA,eAAA;EACA,oCAAA;EACA,iBAAA;EACA;;;;;;wBAMA;CACA;;AAEA;EACA,iBAAA;EACA;;;;UAIA;CACA;;AAEA;EACA,iBAAA;CACA;;AAEA;EACA,gBAAA;CACA;;AAEA;;;;;;OAMA","file":"VueBootstrapTable.vue","sourcesContent":["<template>\n  <div id=\"maindiv\" @click=\"closeDropdown\" @keyup.esc=\"closeDropdown\">\n    <!--<pre>{{columns}}</pre>-->\n    <!--<pre>{{$data}}</pre>-->\n    <div class=\"col-sm-6\">\n      <div v-if=\"showFilter\" style=\"padding-top: 10px;padding-bottom: 10px;\">\n        <div class=\"input-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Filter\" v-model=\"filterKey\">\n          <div class=\"input-group-addon\">\n            <i class=\"glyphicon glyphicon-search\"></i>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-sm-6\">\n      <div v-if=\"showColumnPicker\" style=\"padding-top: 10px;padding-bottom: 10px;float:right;\">\n        <div class=\"btn-group\" :class=\"{'open' : columnMenuOpen}\">\n          <button @click.stop.prevent=\"columnMenuOpen = !columnMenuOpen\" @keyup.esc=\"columnMenuOpen = false\" type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\">\n            Columns\n            <span class=\"caret\"></span>\n          </button>\n          <ul class=\"dropdown-menu\">\n            <li v-for=\"(column, index) in displayCols\" :key=\"index\">\n              <a href=\"#\" @click.stop.prevent=\"toggleColumn(column)\">\n                <i v-if=\"column.visible\" class=\"glyphicon glyphicon-ok\"></i> {{column.title}}\n              </a>\n            </li>\n          </ul>\n        </div>\n      </div>\n      <div v-if=\"showPageResizer\" style=\"padding-top: 10px;padding-bottom: 10px;float:right;\">\n        <select class=\"form-control\" v-model=\"localPageSize\">\n          <option v-for=\"size in pageSizes\" v-bind:key=\"size\">{{ size }}</option>\n        </select>\n      </div>\n    </div>\n    <div class=\"col-sm-12\">\n      <div id=\"loadingdiv\" :class=\"{'vue-table-loading': this.loading , 'vue-table-loading-hidden': !this.loading}\">\n        <div class=\"spinner\"></div>\n      </div>\n      <table class=\"table table-bordered table-hover table-condensed table-striped vue-table\">\n        <thead>\n          <tr>\n            <th v-for=\"(column, index) in displayColsVisible\" @click=\"sortBy($event, column.name)\" track-by=\"column\" :class=\"getClasses(column)\" :key=\"index\">\n              {{ column.title }}\n            </th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr v-for=\"(entry, index) in filteredValuesSorted\" track-by=\"entry\" @click=\"rowClickHandler($event, entry)\" :key=\"index\">\n            <td v-for=\"(column, index) in displayColsVisible\" track-by=\"column\" v-show=\"column.visible\" :class=\"column.cellstyle\" :key=\"index\">\n              <span v-if=\"column.renderfunction!==false\" v-html=\"column.renderfunction( column.name, entry )\"></span>\n              <span v-else-if=\"!column.editable\"> {{ entry[column.name] }} </span>\n              <value-field-section v-else :entry=\"entry\" :columnname=\"column.name\"></value-field-section>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n    <div v-if=\"paginated\" class=\"col-sm-12\">\n      <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"pagination bar\">\n        <div class=\"btn-group\" role=\"group\" aria-label=\"first page\">\n          <button type=\"button\" class=\"btn btn-default\" @click=\"page=1\">&laquo;</button>\n        </div>\n        <div class=\"btn-group\" role=\"group\" aria-label=\"pages\">\n          <button v-for=\"index in validPageNumbers\" type=\"button\" class=\"btn btn-default\" :class=\"{ active: page===index }\" @click=\"page=index\" :key=\"index\">\n            {{index}}\n          </button>\n        </div>\n        <div class=\"btn-group\" v-if=\"showPaginationEtc\">...</div>\n        <div class=\"btn-group\" role=\"group\" aria-label=\"last page\">\n          <button type=\"button\" class=\"btn btn-default\" @click=\"page=maxPage\">&raquo;</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n\n<style>\n/*#maindiv {\n        content: \" \";\n        box-sizing: border-box;\n        display:\n        table; width: 100%;\n    }\n*/\n.vue-table-loading .spinner {\n  border: 16px solid #f3f3f3; /* Light grey */\n  border-top: 16px solid #3498db; /* Blue */\n  border-radius: 50%;\n  width: 120px;\n  height: 120px;\n  animation: spin 2s linear infinite;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  margin: -60px 0 0 -60px;\n}\n\n@keyframes spin {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n.vue-table-loading {\n  position: absolute;\n  z-index: 99;\n  background-color: #ddd;\n  opacity: 0.5;\n  width: 100%;\n  height: 100%;\n}\n\n.vue-table-loading-hidden {\n  display: none;\n}\n\ntable.vue-table thead > tr > th {\n  cursor: pointer;\n  padding-right: 30px !important;\n}\n\n/*.vue-table th.active {\n        color: red;\n    }*/\n\n.vue-table .arrow {\n  opacity: 1;\n  position: relative;\n}\n\n.vue-table .arrow:after {\n  position: absolute;\n  bottom: 8px;\n  right: 8px;\n  display: block;\n  font-family: 'Glyphicons Halflings';\n  content: '\\e150';\n  /*\n        display: inline-block;\n        vertical-align: middle;\n        width: 0;\n        height: 0;\n        margin-left: 5px;\n        opacity: 0.66;*/\n}\n\n.vue-table .arrow.asc:after {\n  content: '\\e155';\n  /*\n        border-left: 4px solid transparent;\n        border-right: 4px solid transparent;\n        border-bottom: 4px solid #000;\n        */\n}\n\n.vue-table .arrow.dsc:after {\n  content: '\\e156';\n}\n\n.vue-table .editableField {\n  cursor: pointer;\n}\n\n/*.vue-table .selected-cell {\n        background-color: #F7C072;\n    }\n\n    .vue-table .selected-row {\n        background-color: #FAE1BE !important;\n    }*/\n</style>\n<script>\nimport axios from 'axios'\nimport qs from 'qs'\nimport lodashorderby from 'lodash.orderby'\nimport lodashincludes from 'lodash.includes'\nimport lodashfindindex from 'lodash.findindex'\n\n/* Field Section used for displaying and editing value of cell */\nvar valueFieldSection = {\n  template:\n    '<span v-if=\"!enabled\" @dblclick=\"toggleInput\" class=\"editableField\">{{this.entry[this.columnname]}}</span>' +\n    '<div v-else-if=\"enabled\" class=\"input-group\">' +\n    '  <input type=\"text\" class=\"form-control\" v-model=\"datavalue\" @keyup.enter=\"saveThis\" @keyup.esc=\"cancelThis\">' +\n    '  <span class=\"input-group-btn\">' +\n    '    <button class=\"btn btn-danger\" type=\"button\" @click=\"cancelThis\" ><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></button>' +\n    '    <button class=\"btn btn-primary\" type=\"button\" @click=\"saveThis\" ><span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span></button>' +\n    '  </span>' +\n    '</div>',\n  props: ['entry', 'columnname'],\n  data: function() {\n    return {\n      enabled: false,\n      datavalue: ''\n    }\n  },\n  methods: {\n    saveThis: function() {\n      var originalValue = this.entry[this.columnname]\n      this.entry[this.columnname] = this.datavalue\n      this.$parent.$emit(\n        'cellDataModifiedEvent',\n        originalValue,\n        this.datavalue,\n        this.columnname,\n        this.entry\n      )\n      this.enabled = !this.enabled\n    },\n    cancelThis: function() {\n      this.datavalue = this.entry[this.columnname]\n      this.enabled = !this.enabled\n    },\n    toggleInput: function() {\n      this.datavalue = this.entry[this.columnname]\n      this.enabled = !this.enabled\n    }\n  }\n}\n\nexport default {\n  name: 'VueBootstrapTable',\n  components: {\n    'value-field-section': valueFieldSection\n  },\n  props: {\n    /**\n     * The column titles, required\n     */\n    columns: {\n      type: Array,\n      required: true\n    },\n    /**\n     * The rows, an Array of objects\n     */\n    values: {\n      type: Array,\n      required: false\n    },\n    /**\n     * Enable/disable table sorting, optional, default true\n     */\n    sortable: {\n      type: Boolean,\n      required: false,\n      default: true\n    },\n    /**\n     * Enable/disable table multicolumn sorting, optional, default false.\n     * Also sortable must be enabled for this function to work.\n     */\n    multiColumnSortable: {\n      type: Boolean,\n      required: false,\n      default: false\n    },\n    /**\n     * Enable/disable input filter, optional, default false\n     */\n    showFilter: {\n      type: Boolean,\n      required: false,\n      default: false\n    },\n    /**\n     * Define if Filter search field is to work in a case Sensitive way. Default: true\n     */\n    filterCaseSensitive: {\n      type: Boolean,\n      required: false,\n      default: true\n    },\n    /**\n     * Enable/disable column picker to show/hide table columns, optional, default false\n     */\n    showColumnPicker: {\n      type: Boolean,\n      required: false,\n      default: false\n    },\n    /**\n     * Enable/disable pagination for the table, optional, default false\n     */\n    paginated: {\n      type: Boolean,\n      required: false,\n      default: false\n    },\n    /**\n     * If pagination is enabled defining the page size, optional, default 10\n     */\n    pageSize: {\n      type: Number,\n      required: false,\n      default: 10\n    },\n    /**\n     * Enable/disable page size change field, optional, default false\n     */\n    pageSizes: {\n      type: Array,\n      required: false,\n      default: [10, 25, 50, 100]\n    },\n    /**\n     * Enable/disable page size change field, optional, default [10]\n     */\n    showPageResizer: {\n      type: Boolean,\n      required: false,\n      default: false\n    },\n    /**\n     * If loading of table is to be done through ajax, then this object must be set\n     */\n    ajax: {\n      type: Object,\n      required: false,\n      default: function() {\n        return {\n          enabled: false,\n          url: '',\n          method: 'GET',\n          delegate: false,\n          axiosConfig: {}\n        }\n      }\n    },\n    /**\n     * Function to handle row clicks\n     */\n    rowClickHandler: {\n      type: Function,\n      required: false,\n      default: function() {}\n    }\n  },\n  data: function() {\n    return {\n      filteredSize: 0,\n      filterKey: '',\n      sortKey: [],\n      sortOrders: {},\n      sortChanged: 1,\n      columnMenuOpen: false,\n      displayCols: [],\n      filteredValues: [],\n      page: 1,\n      localPageSize: 10,\n      echo: 0,\n      loading: false\n    }\n  },\n  mounted: function() {\n    this.$nextTick(function() {\n      this.loading = true\n      this.setSortOrders()\n      var self = this\n      this.columns.forEach(function(column) {\n        var obj = self.buildColumnObject(column)\n        self.displayCols.push(obj)\n      })\n      if (this.ajax.enabled) {\n        if (!this.ajax.delegate) {\n          this.loading = true\n          this.fetchData(function(data) {\n            self.values = data.data\n            self.processFilter()\n          })\n        } else this.processFilter()\n      } else this.processFilter()\n    })\n  },\n  created: function() {\n    var self = this\n    this.$on('cellDataModifiedEvent', self.fireCellDataModifiedEvent)\n    this.localPageSize = this.pageSize\n  },\n  beforeDestroy: function() {\n    var self = this\n    this.$off('cellDataModifiedEvent', self.fireCellDataModifiedEvent)\n  },\n  watch: {\n    values: function() {\n      this.processFilter()\n    },\n    columns: function() {\n      this.displayCols = []\n      var self = this\n      this.columns.forEach(function(column) {\n        var obj = self.buildColumnObject(column)\n        self.displayCols.push(obj)\n      })\n      this.setSortOrders()\n    },\n    showFilter: function() {\n      this.filterKey = ''\n    },\n    showColumnPicker: function() {\n      this.columnMenuOpen = false\n\n      this.displayCols.forEach(function(column) {\n        column.visible = true\n      })\n    },\n    filterKey: function() {\n      // filter was updated, so resetting to page 1\n      this.page = 1\n      this.processFilter()\n    },\n    sortKey: function() {\n      this.processFilter()\n    },\n    sortChanged: function() {\n      this.processFilter()\n    },\n    page: function() {\n      this.processFilter()\n    },\n    paginated: function() {\n      this.processFilter()\n    },\n    localPageSize: function(newValue) {\n      if (newValue > this.filteredValues.length) this.processFilter()\n    },\n    loading: function() {\n      /*document.getElementById(\"loadingdiv\").style.width = document.getElementById(\"maindiv\").getBoundingClientRect().width + \"px\";\n                document.getElementById(\"loadingdiv\").style.height = document.getElementById(\"maindiv\").getBoundingClientRect().height+\"px\";*/\n    }\n  },\n  computed: {\n    displayColsVisible: function() {\n      var displayColsVisible = []\n      for (var a in this.displayCols) {\n        if (this.displayCols[a].visible)\n          displayColsVisible.push(this.displayCols[a])\n      }\n      return displayColsVisible\n    },\n    filteredValuesSorted: function() {\n      var tColsDir = []\n      for (var i = 0, len = this.sortKey.length; i < len; i++) {\n        tColsDir.push(this.sortOrders[this.sortKey[i]].toLowerCase())\n      }\n      return lodashorderby(this.filteredValues, this.sortKey, tColsDir)\n    },\n    validPageNumbers: function() {\n      // 5 page max\n      var result = []\n      var start = 1\n      if (this.page > 3) start = this.page - 2\n      for (var i = 0; start <= this.maxPage && i < 5; start++) {\n        result.push(start)\n        i++\n      }\n      return result\n    },\n    maxPage: function() {\n      return Math.ceil(this.filteredSize / this.localPageSize)\n    },\n    showPaginationEtc: function() {\n      var temp = 1\n      if (this.page > 3) temp = this.page - 2\n      return temp + 4 < this.maxPage\n    }\n  },\n  methods: {\n    fireCellDataModifiedEvent: function(\n      originalValue,\n      newValue,\n      columnTitle,\n      entry\n    ) {\n      this.$parent.$emit(\n        'cellDataModifiedEvent',\n        originalValue,\n        newValue,\n        columnTitle,\n        entry\n      )\n    },\n    processFilter: function() {\n      var self = this\n      this.loading = true\n      if (this.ajax.enabled && this.ajax.delegate) {\n        this.fetchData(function(data) {\n          self.filteredSize = data.filtered\n          self.filteredValues = data.data\n          self.loading = false\n        })\n      } else {\n        var result = this.values.filter(item => {\n          var good = false\n          for (var col in self.displayColsVisible) {\n            if (self.filterCaseSensitive) {\n              if (\n                lodashincludes(\n                  item[self.displayColsVisible[col].name] + '',\n                  self.filterKey + ''\n                )\n              ) {\n                good = true\n              }\n            } else {\n              if (\n                lodashincludes(\n                  (item[self.displayColsVisible[col].name] + '').toLowerCase(),\n                  (self.filterKey + '').toLowerCase()\n                )\n              ) {\n                good = true\n              }\n            }\n          }\n          return good\n        })\n\n        var tColsDir = []\n        for (var i = 0, len = this.sortKey.length; i < len; i++) {\n          tColsDir.push(this.sortOrders[this.sortKey[i]].toLowerCase())\n        }\n\n        result = lodashorderby(result, this.sortKey, tColsDir)\n\n        this.filteredSize = result.length\n        if (this.paginated) {\n          var startIndex = (this.page - 1) * this.localPageSize\n          var tIndex = 0\n          var tempResult = []\n          while (tIndex < this.localPageSize) {\n            if (typeof result[startIndex + tIndex] !== 'undefined')\n              tempResult.push(result[startIndex + tIndex])\n            tIndex++\n          }\n          self.filteredValues = tempResult\n        } else self.filteredValues = result\n        self.loading = false\n      }\n    },\n    fetchData: function(dataCallBackFunction) {\n      var self = this\n      var ajaxParameters = {\n        params: {}\n      }\n      this.echo++\n      if (this.ajax.enabled && this.ajax.delegate) {\n        var tColsDir = []\n        for (var i = 0, len = this.sortKey.length; i < len; i++) {\n          tColsDir.push(this.sortOrders[this.sortKey[i]].toLowerCase())\n        }\n        if (this.ajax.method === 'GET') {\n          //COPY\n          ajaxParameters = JSON.parse(JSON.stringify(this.ajax.axiosConfig))\n          ajaxParameters.params = {}\n          ajaxParameters.params.sortcol = this.sortKey\n          ajaxParameters.params.sortdir = tColsDir\n          ajaxParameters.params.filter = this.filterKey\n          if (self.paginated) {\n            ajaxParameters.params.page = this.page\n            ajaxParameters.params.pagesize = this.localPageSize\n          } else {\n            ajaxParameters.params.page = 1\n            ajaxParameters.params.pagesize = null\n          }\n          ajaxParameters.params.echo = this.echo\n        }\n        if (this.ajax.method === 'POST') {\n          ajaxParameters.sortcol = this.sortKey\n          ajaxParameters.sortdir = tColsDir\n          ajaxParameters.filter = this.filterKey\n          if (self.paginated) {\n            ajaxParameters.page = this.page\n            ajaxParameters.pagesize = this.localPageSize\n          } else {\n            ajaxParameters.page = 1\n            ajaxParameters.pagesize = null\n          }\n          ajaxParameters.echo = this.echo\n        }\n        //console.log(JSON.stringify(ajaxParameters));\n      }\n      if (this.ajax.enabled && !this.ajax.delegate) {\n        if (this.ajax.method === 'GET') {\n          //COPY\n          ajaxParameters = JSON.parse(JSON.stringify(this.ajax.axiosConfig))\n          ajaxParameters.params = {}\n        }\n        if (this.ajax.method === 'POST') {\n          // Do nothing at this point !\n        }\n      }\n      if (this.ajax.enabled && this.ajax.method === 'GET') {\n        axios\n          .get(self.ajax.url, ajaxParameters)\n          .then(response => {\n            if (this.ajax.delegate) {\n              if (response.data.echo !== self.echo) {\n                return\n              }\n            }\n            dataCallBackFunction(response.data)\n            this.$parent.$emit('ajaxLoadedEvent', response.data)\n          })\n          .catch(e => {\n            this.$parent.$emit('ajaxLoadingError', e)\n          })\n      }\n      if (this.ajax.enabled && this.ajax.method === 'POST') {\n        axios\n          .post(\n            self.ajax.url,\n            qs.stringify(ajaxParameters),\n            this.ajax.axiosConfig\n          )\n          .then(response => {\n            if (this.ajax.delegate) {\n              if (response.data.echo !== self.echo) {\n                return\n              }\n            }\n\n            dataCallBackFunction(response.data)\n            this.$parent.$emit('ajaxLoadedEvent', response.data)\n          })\n          .catch(e => {\n            this.$parent.$emit('ajaxLoadingError', e)\n          })\n      }\n    },\n    buildColumnObject: function(column) {\n      var obj = {}\n      obj.title = column.title\n      if (typeof column.name !== 'undefined') obj.name = column.name\n      else obj.name = column.title\n      if (typeof column.visible !== 'undefined') obj.visible = column.visible\n      else obj.visible = true\n      if (typeof column.editable !== 'undefined') obj.editable = column.editable\n      else obj.editable = false\n      if (typeof column.renderfunction !== 'undefined')\n        obj.renderfunction = column.renderfunction\n      else obj.renderfunction = false\n      if (typeof column.columnstyle !== 'undefined')\n        obj.columnstyle = column.columnstyle\n      else obj.columnstyle = ''\n      if (typeof column.cellstyle !== 'undefined')\n        obj.cellstyle = column.cellstyle\n      else obj.cellstyle = ''\n\n      return obj\n    },\n    setSortOrders: function() {\n      this.sortKey = []\n      var sortOrders = {}\n      this.columns.forEach(function(column) {\n        sortOrders[column.name] = ''\n      })\n      this.sortOrders = sortOrders\n    },\n    sortBy: function(event, key) {\n      if (this.sortable) {\n        var self = this\n\n        if (\n          !this.multiColumnSortable ||\n          (this.multiColumnSortable && !event.shiftKey)\n        ) {\n          this.sortKey = [key]\n          this.columns.forEach(function(column) {\n            if (column.name !== key) {\n              self.sortOrders[column.name] = ''\n            }\n          })\n        } else {\n          if (\n            lodashfindindex(this.sortKey, function(o) {\n              return o === key\n            }) === -1\n          ) {\n            this.sortKey.push(key)\n          }\n        }\n        if (this.sortOrders[key] === '') {\n          this.sortOrders[key] = 'ASC'\n        } else if (this.sortOrders[key] === 'ASC') {\n          this.sortOrders[key] = 'DESC'\n        } else {\n          this.sortOrders[key] = 'ASC'\n        }\n\n        this.sortChanged = this.sortChanged * -1\n      }\n    },\n    getClasses: function(column) {\n      var classes = [column.columnstyle]\n      var key = column.name\n      if (this.sortable) {\n        classes.push('arrow')\n        /*if (this.sortKey === key) {\n                        classes.push(\"active\");\n                    }*/\n        if (\n          lodashfindindex(this.sortKey, function(o) {\n            return o === key\n          }) !== -1\n        ) {\n          classes.push('active')\n        }\n\n        if (this.sortOrders[key] === 'ASC') {\n          classes.push('asc')\n        } else if (this.sortOrders[key] === 'DESC') {\n          classes.push('dsc')\n        }\n      }\n      return classes\n    },\n    toggleColumn: function(column) {\n      column.visible = !column.visible\n    },\n    closeDropdown: function() {\n      this.columnMenuOpen = false\n    }\n  },\n  events: {}\n}\n</script>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -420,7 +420,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -454,19 +454,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	/* Field Section used for displaying and editing value of cell */
 	var valueFieldSection = {
-	  template: '<span v-if="!enabled" @dblclick="toggleInput" class="editableField">{{this.entry[this.columnname]}}</span>' + '<div v-else-if="enabled" class="input-group">' + '  <input type="text" class="form-control" v-model="datavalue" @keyup.enter="saveThis" @keyup.esc="cancelThis">' + '  <span class="input-group-btn">' + '    <button class="btn btn-danger" type="button" @click="cancelThis" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>' + '    <button class="btn btn-primary" type="button" @click="saveThis" ><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>' + "  </span>" + "</div>",
-	  props: ["entry", "columnname"],
+	  template: '<span v-if="!enabled" @dblclick="toggleInput" class="editableField">{{this.entry[this.columnname]}}</span>' + '<div v-else-if="enabled" class="input-group">' + '  <input type="text" class="form-control" v-model="datavalue" @keyup.enter="saveThis" @keyup.esc="cancelThis">' + '  <span class="input-group-btn">' + '    <button class="btn btn-danger" type="button" @click="cancelThis" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>' + '    <button class="btn btn-primary" type="button" @click="saveThis" ><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>' + '  </span>' + '</div>',
+	  props: ['entry', 'columnname'],
 	  data: function data() {
 	    return {
 	      enabled: false,
-	      datavalue: ""
+	      datavalue: ''
 	    };
 	  },
 	  methods: {
 	    saveThis: function saveThis() {
 	      var originalValue = this.entry[this.columnname];
 	      this.entry[this.columnname] = this.datavalue;
-	      this.$parent.$emit("cellDataModifiedEvent", originalValue, this.datavalue, this.columnname, this.entry);
+	      this.$parent.$emit('cellDataModifiedEvent', originalValue, this.datavalue, this.columnname, this.entry);
 	      this.enabled = !this.enabled;
 	    },
 	    cancelThis: function cancelThis() {
@@ -486,22 +486,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	//       <div v-if="showFilter" style="padding-top: 10px;padding-bottom: 10px;">
 	//         <div class="input-group">
 	//           <input type="text" class="form-control" placeholder="Filter" v-model="filterKey">
-	//             <div class="input-group-addon">
-	//               <i class="glyphicon glyphicon-search"></i>
-	//             </div>
+	//           <div class="input-group-addon">
+	//             <i class="glyphicon glyphicon-search"></i>
 	//           </div>
 	//         </div>
+	//       </div>
 	//     </div>
 	//     <div class="col-sm-6">
 	//       <div v-if="showColumnPicker" style="padding-top: 10px;padding-bottom: 10px;float:right;">
 	//         <div class="btn-group" :class="{'open' : columnMenuOpen}">
-	//           <button @click.stop.prevent="columnMenuOpen = !columnMenuOpen" @keyup.esc="columnMenuOpen = false"
-	//             type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-	//             aria-haspopup="true">
-	//             Columns <span class="caret"></span>
+	//           <button @click.stop.prevent="columnMenuOpen = !columnMenuOpen" @keyup.esc="columnMenuOpen = false" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+	//             Columns
+	//             <span class="caret"></span>
 	//           </button>
 	//           <ul class="dropdown-menu">
-	//             <li v-for="column in displayCols">
+	//             <li v-for="(column, index) in displayCols" :key="index">
 	//               <a href="#" @click.stop.prevent="toggleColumn(column)">
 	//                 <i v-if="column.visible" class="glyphicon glyphicon-ok"></i> {{column.title}}
 	//               </a>
@@ -522,22 +521,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	//       <table class="table table-bordered table-hover table-condensed table-striped vue-table">
 	//         <thead>
 	//           <tr>
-	//             <th v-for="column in displayColsVisible" @click="sortBy($event, column.name)"
-	//               track-by="column"
-	//               :class="getClasses(column)">
+	//             <th v-for="(column, index) in displayColsVisible" @click="sortBy($event, column.name)" track-by="column" :class="getClasses(column)" :key="index">
 	//               {{ column.title }}
 	//             </th>
 	//           </tr>
 	//         </thead>
 	//         <tbody>
-	//           <tr v-for="entry in filteredValuesSorted " track-by="entry" @click="rowClickHandler($event, entry)">
-	//             <td v-for="column in displayColsVisible" track-by="column"
-	//               v-show="column.visible" :class="column.cellstyle">
+	//           <tr v-for="(entry, index) in filteredValuesSorted" track-by="entry" @click="rowClickHandler($event, entry)" :key="index">
+	//             <td v-for="(column, index) in displayColsVisible" track-by="column" v-show="column.visible" :class="column.cellstyle" :key="index">
 	//               <span v-if="column.renderfunction!==false" v-html="column.renderfunction( column.name, entry )"></span>
 	//               <span v-else-if="!column.editable"> {{ entry[column.name] }} </span>
-	//               <value-field-section v-else
-	//                 :entry="entry"
-	//                 :columnname="column.name"></value-field-section>
+	//               <value-field-section v-else :entry="entry" :columnname="column.name"></value-field-section>
 	//             </td>
 	//           </tr>
 	//         </tbody>
@@ -549,10 +543,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//           <button type="button" class="btn btn-default" @click="page=1">&laquo;</button>
 	//         </div>
 	//         <div class="btn-group" role="group" aria-label="pages">
-	//           <button v-for="index in validPageNumbers"
-	//             type="button" class="btn btn-default"
-	//             :class="{ active: page===index }"
-	//             @click="page=index">
+	//           <button v-for="index in validPageNumbers" type="button" class="btn btn-default" :class="{ active: page===index }" @click="page=index" :key="index">
 	//             {{index}}
 	//           </button>
 	//         </div>
@@ -566,9 +557,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </template>
 	//
 	// <style>
-	// .vue-table {
-	// }
-	//
 	// /*#maindiv {
 	//         content: " ";
 	//         box-sizing: border-box;
@@ -630,8 +618,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	//   bottom: 8px;
 	//   right: 8px;
 	//   display: block;
-	//   font-family: "Glyphicons Halflings";
-	//   content: "\e150";
+	//   font-family: 'Glyphicons Halflings';
+	//   content: '\e150';
 	//   /*
 	//         display: inline-block;
 	//         vertical-align: middle;
@@ -642,7 +630,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// }
 	//
 	// .vue-table .arrow.asc:after {
-	//   content: "\e155";
+	//   content: '\e155';
 	//   /*
 	//         border-left: 4px solid transparent;
 	//         border-right: 4px solid transparent;
@@ -651,7 +639,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// }
 	//
 	// .vue-table .arrow.dsc:after {
-	//   content: "\e156";
+	//   content: '\e156';
 	// }
 	//
 	// .vue-table .editableField {
@@ -668,117 +656,117 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 	// <script>
 	exports.default = {
-	  name: "VueBootstrapTable",
+	  name: 'VueBootstrapTable',
 	  components: {
-	    "value-field-section": valueFieldSection
+	    'value-field-section': valueFieldSection
 	  },
 	  props: {
 	    /**
-	      * The column titles, required
-	      */
+	     * The column titles, required
+	     */
 	    columns: {
 	      type: Array,
 	      required: true
 	    },
 	    /**
-	      * The rows, an Array of objects
-	      */
+	     * The rows, an Array of objects
+	     */
 	    values: {
 	      type: Array,
 	      required: false
 	    },
 	    /**
-	      * Enable/disable table sorting, optional, default true
-	      */
+	     * Enable/disable table sorting, optional, default true
+	     */
 	    sortable: {
 	      type: Boolean,
 	      required: false,
 	      default: true
 	    },
 	    /**
-	      * Enable/disable table multicolumn sorting, optional, default false.
-	      * Also sortable must be enabled for this function to work.
-	      */
+	     * Enable/disable table multicolumn sorting, optional, default false.
+	     * Also sortable must be enabled for this function to work.
+	     */
 	    multiColumnSortable: {
 	      type: Boolean,
 	      required: false,
 	      default: false
 	    },
 	    /**
-	      * Enable/disable input filter, optional, default false
-	      */
+	     * Enable/disable input filter, optional, default false
+	     */
 	    showFilter: {
 	      type: Boolean,
 	      required: false,
 	      default: false
 	    },
 	    /**
-	      * Define if Filter search field is to work in a case Sensitive way. Default: true
-	      */
+	     * Define if Filter search field is to work in a case Sensitive way. Default: true
+	     */
 	    filterCaseSensitive: {
 	      type: Boolean,
 	      required: false,
 	      default: true
 	    },
 	    /**
-	      * Enable/disable column picker to show/hide table columns, optional, default false
-	      */
+	     * Enable/disable column picker to show/hide table columns, optional, default false
+	     */
 	    showColumnPicker: {
 	      type: Boolean,
 	      required: false,
 	      default: false
 	    },
 	    /**
-	      * Enable/disable pagination for the table, optional, default false
-	      */
+	     * Enable/disable pagination for the table, optional, default false
+	     */
 	    paginated: {
 	      type: Boolean,
 	      required: false,
 	      default: false
 	    },
 	    /**
-	      * If pagination is enabled defining the page size, optional, default 10
-	      */
+	     * If pagination is enabled defining the page size, optional, default 10
+	     */
 	    pageSize: {
 	      type: Number,
 	      required: false,
 	      default: 10
 	    },
 	    /**
-	      * Enable/disable page size change field, optional, default false
-	      */
+	     * Enable/disable page size change field, optional, default false
+	     */
 	    pageSizes: {
 	      type: Array,
 	      required: false,
 	      default: [10, 25, 50, 100]
 	    },
 	    /**
-	      * Enable/disable page size change field, optional, default [10]
-	      */
+	     * Enable/disable page size change field, optional, default [10]
+	     */
 	    showPageResizer: {
 	      type: Boolean,
 	      required: false,
 	      default: false
 	    },
 	    /**
-	      * If loading of table is to be done through ajax, then this object must be set
-	      */
+	     * If loading of table is to be done through ajax, then this object must be set
+	     */
 	    ajax: {
 	      type: Object,
 	      required: false,
 	      default: function _default() {
 	        return {
 	          enabled: false,
-	          url: "",
-	          method: "GET",
+	          url: '',
+	          method: 'GET',
 	          delegate: false,
 	          axiosConfig: {}
 	        };
 	      }
 	    },
 	    /**
-	      * Function to handle row clicks
-	      */
+	     * Function to handle row clicks
+	     */
 	    rowClickHandler: {
 	      type: Function,
 	      required: false,
@@ -788,7 +776,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  data: function data() {
 	    return {
 	      filteredSize: 0,
-	      filterKey: "",
+	      filterKey: '',
 	      sortKey: [],
 	      sortOrders: {},
 	      sortChanged: 1,
@@ -823,12 +811,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  created: function created() {
 	    var self = this;
-	    this.$on("cellDataModifiedEvent", self.fireCellDataModifiedEvent);
+	    this.$on('cellDataModifiedEvent', self.fireCellDataModifiedEvent);
 	    this.localPageSize = this.pageSize;
 	  },
 	  beforeDestroy: function beforeDestroy() {
 	    var self = this;
-	    this.$off("cellDataModifiedEvent", self.fireCellDataModifiedEvent);
+	    this.$off('cellDataModifiedEvent', self.fireCellDataModifiedEvent);
 	  },
 	  watch: {
 	    values: function values() {
@@ -844,7 +832,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.setSortOrders();
 	    },
 	    showFilter: function showFilter() {
-	      this.filterKey = "";
+	      this.filterKey = '';
 	    },
 	    showColumnPicker: function showColumnPicker() {
 	      this.columnMenuOpen = false;
@@ -915,7 +903,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  methods: {
 	    fireCellDataModifiedEvent: function fireCellDataModifiedEvent(originalValue, newValue, columnTitle, entry) {
-	      this.$parent.$emit("cellDataModifiedEvent", originalValue, newValue, columnTitle, entry);
+	      this.$parent.$emit('cellDataModifiedEvent', originalValue, newValue, columnTitle, entry);
 	    },
 	    processFilter: function processFilter() {
 	      var self = this;
@@ -931,11 +919,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	          var good = false;
 	          for (var col in self.displayColsVisible) {
 	            if (self.filterCaseSensitive) {
-	              if ((0, _lodash4.default)(item[self.displayColsVisible[col].name] + "", self.filterKey + "")) {
+	              if ((0, _lodash4.default)(item[self.displayColsVisible[col].name] + '', self.filterKey + '')) {
 	                good = true;
 	              }
 	            } else {
-	              if ((0, _lodash4.default)((item[self.displayColsVisible[col].name] + "").toLowerCase(), (self.filterKey + "").toLowerCase())) {
+	              if ((0, _lodash4.default)((item[self.displayColsVisible[col].name] + '').toLowerCase(), (self.filterKey + '').toLowerCase())) {
 	                good = true;
 	              }
 	            }
@@ -956,7 +944,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          var tIndex = 0;
 	          var tempResult = [];
 	          while (tIndex < this.localPageSize) {
-	            if (typeof result[startIndex + tIndex] !== "undefined") tempResult.push(result[startIndex + tIndex]);
+	            if (typeof result[startIndex + tIndex] !== 'undefined') tempResult.push(result[startIndex + tIndex]);
 	            tIndex++;
 	          }
 	          self.filteredValues = tempResult;
@@ -977,7 +965,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        for (var i = 0, len = this.sortKey.length; i < len; i++) {
 	          tColsDir.push(this.sortOrders[this.sortKey[i]].toLowerCase());
 	        }
-	        if (this.ajax.method === "GET") {
+	        if (this.ajax.method === 'GET') {
 	          //COPY
 	          ajaxParameters = JSON.parse((0, _stringify2.default)(this.ajax.axiosConfig));
 	          ajaxParameters.params = {};
@@ -993,7 +981,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          }
 	          ajaxParameters.params.echo = this.echo;
 	        }
-	        if (this.ajax.method === "POST") {
+	        if (this.ajax.method === 'POST') {
 	          ajaxParameters.sortcol = this.sortKey;
 	          ajaxParameters.sortdir = tColsDir;
 	          ajaxParameters.filter = this.filterKey;
@@ -1009,16 +997,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	        //console.log(JSON.stringify(ajaxParameters));
 	      }
 	      if (this.ajax.enabled && !this.ajax.delegate) {
-	        if (this.ajax.method === "GET") {
+	        if (this.ajax.method === 'GET') {
 	          //COPY
 	          ajaxParameters = JSON.parse((0, _stringify2.default)(this.ajax.axiosConfig));
 	          ajaxParameters.params = {};
 	        }
-	        if (this.ajax.method === "POST") {
+	        if (this.ajax.method === 'POST') {
 	          // Do nothing at this point !
 	        }
 	      }
-	      if (this.ajax.enabled && this.ajax.method === "GET") {
+	      if (this.ajax.enabled && this.ajax.method === 'GET') {
 	        _axios2.default.get(self.ajax.url, ajaxParameters).then(function (response) {
 	          if (_this.ajax.delegate) {
 	            if (response.data.echo !== self.echo) {
@@ -1026,12 +1014,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	          }
 	          dataCallBackFunction(response.data);
-	          _this.$parent.$emit("ajaxLoadedEvent", response.data);
+	          _this.$parent.$emit('ajaxLoadedEvent', response.data);
 	        }).catch(function (e) {
-	          _this.$parent.$emit("ajaxLoadingError", e);
+	          _this.$parent.$emit('ajaxLoadingError', e);
 	        });
 	      }
-	      if (this.ajax.enabled && this.ajax.method === "POST") {
+	      if (this.ajax.enabled && this.ajax.method === 'POST') {
 	        _axios2.default.post(self.ajax.url, _qs2.default.stringify(ajaxParameters), this.ajax.axiosConfig).then(function (response) {
 	          if (_this.ajax.delegate) {
 	            if (response.data.echo !== self.echo) {
@@ -1040,21 +1028,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	          }
 	
 	          dataCallBackFunction(response.data);
-	          _this.$parent.$emit("ajaxLoadedEvent", response.data);
+	          _this.$parent.$emit('ajaxLoadedEvent', response.data);
 	        }).catch(function (e) {
-	          _this.$parent.$emit("ajaxLoadingError", e);
+	          _this.$parent.$emit('ajaxLoadingError', e);
 	        });
 	      }
 	    },
 	    buildColumnObject: function buildColumnObject(column) {
 	      var obj = {};
 	      obj.title = column.title;
-	      if (typeof column.name !== "undefined") obj.name = column.name;else obj.name = column.title;
-	      if (typeof column.visible !== "undefined") obj.visible = column.visible;else obj.visible = true;
-	      if (typeof column.editable !== "undefined") obj.editable = column.editable;else obj.editable = false;
-	      if (typeof column.renderfunction !== "undefined") obj.renderfunction = column.renderfunction;else obj.renderfunction = false;
-	      if (typeof column.columnstyle !== "undefined") obj.columnstyle = column.columnstyle;else obj.columnstyle = "";
-	      if (typeof column.cellstyle !== "undefined") obj.cellstyle = column.cellstyle;else obj.cellstyle = "";
+	      if (typeof column.name !== 'undefined') obj.name = column.name;else obj.name = column.title;
+	      if (typeof column.visible !== 'undefined') obj.visible = column.visible;else obj.visible = true;
+	      if (typeof column.editable !== 'undefined') obj.editable = column.editable;else obj.editable = false;
+	      if (typeof column.renderfunction !== 'undefined') obj.renderfunction = column.renderfunction;else obj.renderfunction = false;
+	      if (typeof column.columnstyle !== 'undefined') obj.columnstyle = column.columnstyle;else obj.columnstyle = '';
+	      if (typeof column.cellstyle !== 'undefined') obj.cellstyle = column.cellstyle;else obj.cellstyle = '';
 	
 	      return obj;
 	    },
@@ -1062,7 +1050,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.sortKey = [];
 	      var sortOrders = {};
 	      this.columns.forEach(function (column) {
-	        sortOrders[column.name] = "";
+	        sortOrders[column.name] = '';
 	      });
 	      this.sortOrders = sortOrders;
 	    },
@@ -1074,7 +1062,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          this.sortKey = [key];
 	          this.columns.forEach(function (column) {
 	            if (column.name !== key) {
-	              self.sortOrders[column.name] = "";
+	              self.sortOrders[column.name] = '';
 	            }
 	          });
 	        } else {
@@ -1084,12 +1072,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.sortKey.push(key);
 	          }
 	        }
-	        if (this.sortOrders[key] === "") {
-	          this.sortOrders[key] = "ASC";
-	        } else if (this.sortOrders[key] === "ASC") {
-	          this.sortOrders[key] = "DESC";
+	        if (this.sortOrders[key] === '') {
+	          this.sortOrders[key] = 'ASC';
+	        } else if (this.sortOrders[key] === 'ASC') {
+	          this.sortOrders[key] = 'DESC';
 	        } else {
-	          this.sortOrders[key] = "ASC";
+	          this.sortOrders[key] = 'ASC';
 	        }
 	
 	        this.sortChanged = this.sortChanged * -1;
@@ -1099,20 +1087,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var classes = [column.columnstyle];
 	      var key = column.name;
 	      if (this.sortable) {
-	        classes.push("arrow");
+	        classes.push('arrow');
 	        /*if (this.sortKey === key) {
 	                        classes.push("active");
 	                    }*/
 	        if ((0, _lodash6.default)(this.sortKey, function (o) {
 	          return o === key;
 	        }) !== -1) {
-	          classes.push("active");
+	          classes.push('active');
 	        }
 	
-	        if (this.sortOrders[key] === "ASC") {
-	          classes.push("asc");
-	        } else if (this.sortOrders[key] === "DESC") {
-	          classes.push("dsc");
+	        if (this.sortOrders[key] === 'ASC') {
+	          classes.push('asc');
+	        } else if (this.sortOrders[key] === 'DESC') {
+	          classes.push('dsc');
 	        }
 	      }
 	      return classes;
@@ -1125,10 +1113,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  events: {}
+	  // </script>
+	
+	  /* generated by vue-loader */
+	
 	};
-	// </script>
-
-	/* generated by vue-loader */
 
 /***/ }),
 /* 7 */
@@ -9184,7 +9173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 46 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<div id=\"maindiv\" @click=\"closeDropdown\" @keyup.esc=\"closeDropdown\">\n  <!--<pre>{{columns}}</pre>-->\n  <!--<pre>{{$data}}</pre>-->\n  <div class=\"col-sm-6\">\n    <div v-if=\"showFilter\" style=\"padding-top: 10px;padding-bottom: 10px;\">\n      <div class=\"input-group\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Filter\" v-model=\"filterKey\">\n          <div class=\"input-group-addon\">\n            <i class=\"glyphicon glyphicon-search\"></i>\n          </div>\n        </div>\n      </div>\n  </div>\n  <div class=\"col-sm-6\">\n    <div v-if=\"showColumnPicker\" style=\"padding-top: 10px;padding-bottom: 10px;float:right;\">\n      <div class=\"btn-group\" :class=\"{'open' : columnMenuOpen}\">\n        <button @click.stop.prevent=\"columnMenuOpen = !columnMenuOpen\" @keyup.esc=\"columnMenuOpen = false\"\n          type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\"\n          aria-haspopup=\"true\">\n          Columns <span class=\"caret\"></span>\n        </button>\n        <ul class=\"dropdown-menu\">\n          <li v-for=\"column in displayCols\">\n            <a href=\"#\" @click.stop.prevent=\"toggleColumn(column)\">\n              <i v-if=\"column.visible\" class=\"glyphicon glyphicon-ok\"></i> {{column.title}}\n            </a>\n          </li>\n        </ul>\n      </div>\n    </div>\n    <div v-if=\"showPageResizer\" style=\"padding-top: 10px;padding-bottom: 10px;float:right;\">\n      <select class=\"form-control\" v-model=\"localPageSize\">\n        <option v-for=\"size in pageSizes\" v-bind:key=\"size\">{{ size }}</option>\n      </select>\n    </div>\n  </div>\n  <div class=\"col-sm-12\">\n    <div id=\"loadingdiv\" :class=\"{'vue-table-loading': this.loading , 'vue-table-loading-hidden': !this.loading}\">\n      <div class=\"spinner\"></div>\n    </div>\n    <table class=\"table table-bordered table-hover table-condensed table-striped vue-table\">\n      <thead>\n        <tr>\n          <th v-for=\"column in displayColsVisible\" @click=\"sortBy($event, column.name)\"\n            track-by=\"column\"\n            :class=\"getClasses(column)\">\n            {{ column.title }}\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr v-for=\"entry in filteredValuesSorted \" track-by=\"entry\" @click=\"rowClickHandler($event, entry)\">\n          <td v-for=\"column in displayColsVisible\" track-by=\"column\"\n            v-show=\"column.visible\" :class=\"column.cellstyle\">\n            <span v-if=\"column.renderfunction!==false\" v-html=\"column.renderfunction( column.name, entry )\"></span>\n            <span v-else-if=\"!column.editable\"> {{ entry[column.name] }} </span>\n            <value-field-section v-else\n              :entry=\"entry\"\n              :columnname=\"column.name\"></value-field-section>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div v-if=\"paginated\" class=\"col-sm-12\">\n    <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"pagination bar\">\n      <div class=\"btn-group\" role=\"group\" aria-label=\"first page\">\n        <button type=\"button\" class=\"btn btn-default\" @click=\"page=1\">&laquo;</button>\n      </div>\n      <div class=\"btn-group\" role=\"group\" aria-label=\"pages\">\n        <button v-for=\"index in validPageNumbers\"\n          type=\"button\" class=\"btn btn-default\"\n          :class=\"{ active: page===index }\"\n          @click=\"page=index\">\n          {{index}}\n        </button>\n      </div>\n      <div class=\"btn-group\" v-if=\"showPaginationEtc\">...</div>\n      <div class=\"btn-group\" role=\"group\" aria-label=\"last page\">\n        <button type=\"button\" class=\"btn btn-default\" @click=\"page=maxPage\">&raquo;</button>\n      </div>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "\n<div id=\"maindiv\" @click=\"closeDropdown\" @keyup.esc=\"closeDropdown\">\n  <!--<pre>{{columns}}</pre>-->\n  <!--<pre>{{$data}}</pre>-->\n  <div class=\"col-sm-6\">\n    <div v-if=\"showFilter\" style=\"padding-top: 10px;padding-bottom: 10px;\">\n      <div class=\"input-group\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Filter\" v-model=\"filterKey\">\n        <div class=\"input-group-addon\">\n          <i class=\"glyphicon glyphicon-search\"></i>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-6\">\n    <div v-if=\"showColumnPicker\" style=\"padding-top: 10px;padding-bottom: 10px;float:right;\">\n      <div class=\"btn-group\" :class=\"{'open' : columnMenuOpen}\">\n        <button @click.stop.prevent=\"columnMenuOpen = !columnMenuOpen\" @keyup.esc=\"columnMenuOpen = false\" type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\">\n          Columns\n          <span class=\"caret\"></span>\n        </button>\n        <ul class=\"dropdown-menu\">\n          <li v-for=\"(column, index) in displayCols\" :key=\"index\">\n            <a href=\"#\" @click.stop.prevent=\"toggleColumn(column)\">\n              <i v-if=\"column.visible\" class=\"glyphicon glyphicon-ok\"></i> {{column.title}}\n            </a>\n          </li>\n        </ul>\n      </div>\n    </div>\n    <div v-if=\"showPageResizer\" style=\"padding-top: 10px;padding-bottom: 10px;float:right;\">\n      <select class=\"form-control\" v-model=\"localPageSize\">\n        <option v-for=\"size in pageSizes\" v-bind:key=\"size\">{{ size }}</option>\n      </select>\n    </div>\n  </div>\n  <div class=\"col-sm-12\">\n    <div id=\"loadingdiv\" :class=\"{'vue-table-loading': this.loading , 'vue-table-loading-hidden': !this.loading}\">\n      <div class=\"spinner\"></div>\n    </div>\n    <table class=\"table table-bordered table-hover table-condensed table-striped vue-table\">\n      <thead>\n        <tr>\n          <th v-for=\"(column, index) in displayColsVisible\" @click=\"sortBy($event, column.name)\" track-by=\"column\" :class=\"getClasses(column)\" :key=\"index\">\n            {{ column.title }}\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr v-for=\"(entry, index) in filteredValuesSorted\" track-by=\"entry\" @click=\"rowClickHandler($event, entry)\" :key=\"index\">\n          <td v-for=\"(column, index) in displayColsVisible\" track-by=\"column\" v-show=\"column.visible\" :class=\"column.cellstyle\" :key=\"index\">\n            <span v-if=\"column.renderfunction!==false\" v-html=\"column.renderfunction( column.name, entry )\"></span>\n            <span v-else-if=\"!column.editable\"> {{ entry[column.name] }} </span>\n            <value-field-section v-else :entry=\"entry\" :columnname=\"column.name\"></value-field-section>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <div v-if=\"paginated\" class=\"col-sm-12\">\n    <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"pagination bar\">\n      <div class=\"btn-group\" role=\"group\" aria-label=\"first page\">\n        <button type=\"button\" class=\"btn btn-default\" @click=\"page=1\">&laquo;</button>\n      </div>\n      <div class=\"btn-group\" role=\"group\" aria-label=\"pages\">\n        <button v-for=\"index in validPageNumbers\" type=\"button\" class=\"btn btn-default\" :class=\"{ active: page===index }\" @click=\"page=index\" :key=\"index\">\n          {{index}}\n        </button>\n      </div>\n      <div class=\"btn-group\" v-if=\"showPaginationEtc\">...</div>\n      <div class=\"btn-group\" role=\"group\" aria-label=\"last page\">\n        <button type=\"button\" class=\"btn btn-default\" @click=\"page=maxPage\">&raquo;</button>\n      </div>\n    </div>\n  </div>\n</div>\n";
 
 /***/ })
 /******/ ])

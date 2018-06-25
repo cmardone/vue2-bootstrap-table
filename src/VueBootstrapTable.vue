@@ -6,22 +6,21 @@
       <div v-if="showFilter" style="padding-top: 10px;padding-bottom: 10px;">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Filter" v-model="filterKey">
-            <div class="input-group-addon">
-              <i class="glyphicon glyphicon-search"></i>
-            </div>
+          <div class="input-group-addon">
+            <i class="glyphicon glyphicon-search"></i>
           </div>
         </div>
+      </div>
     </div>
     <div class="col-sm-6">
       <div v-if="showColumnPicker" style="padding-top: 10px;padding-bottom: 10px;float:right;">
         <div class="btn-group" :class="{'open' : columnMenuOpen}">
-          <button @click.stop.prevent="columnMenuOpen = !columnMenuOpen" @keyup.esc="columnMenuOpen = false"
-            type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-            aria-haspopup="true">
-            Columns <span class="caret"></span>
+          <button @click.stop.prevent="columnMenuOpen = !columnMenuOpen" @keyup.esc="columnMenuOpen = false" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+            Columns
+            <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li v-for="column in displayCols">
+            <li v-for="(column, index) in displayCols" :key="index">
               <a href="#" @click.stop.prevent="toggleColumn(column)">
                 <i v-if="column.visible" class="glyphicon glyphicon-ok"></i> {{column.title}}
               </a>
@@ -42,22 +41,17 @@
       <table class="table table-bordered table-hover table-condensed table-striped vue-table">
         <thead>
           <tr>
-            <th v-for="column in displayColsVisible" @click="sortBy($event, column.name)"
-              track-by="column"
-              :class="getClasses(column)">
+            <th v-for="(column, index) in displayColsVisible" @click="sortBy($event, column.name)" track-by="column" :class="getClasses(column)" :key="index">
               {{ column.title }}
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="entry in filteredValuesSorted " track-by="entry" @click="rowClickHandler($event, entry)">
-            <td v-for="column in displayColsVisible" track-by="column"
-              v-show="column.visible" :class="column.cellstyle">
+          <tr v-for="(entry, index) in filteredValuesSorted" track-by="entry" @click="rowClickHandler($event, entry)" :key="index">
+            <td v-for="(column, index) in displayColsVisible" track-by="column" v-show="column.visible" :class="column.cellstyle" :key="index">
               <span v-if="column.renderfunction!==false" v-html="column.renderfunction( column.name, entry )"></span>
               <span v-else-if="!column.editable"> {{ entry[column.name] }} </span>
-              <value-field-section v-else
-                :entry="entry"
-                :columnname="column.name"></value-field-section>
+              <value-field-section v-else :entry="entry" :columnname="column.name"></value-field-section>
             </td>
           </tr>
         </tbody>
@@ -69,10 +63,7 @@
           <button type="button" class="btn btn-default" @click="page=1">&laquo;</button>
         </div>
         <div class="btn-group" role="group" aria-label="pages">
-          <button v-for="index in validPageNumbers"
-            type="button" class="btn btn-default"
-            :class="{ active: page===index }"
-            @click="page=index">
+          <button v-for="index in validPageNumbers" type="button" class="btn btn-default" :class="{ active: page===index }" @click="page=index" :key="index">
             {{index}}
           </button>
         </div>
@@ -86,9 +77,6 @@
 </template>
 
 <style>
-.vue-table {
-}
-
 /*#maindiv {
         content: " ";
         box-sizing: border-box;
@@ -150,8 +138,8 @@ table.vue-table thead > tr > th {
   bottom: 8px;
   right: 8px;
   display: block;
-  font-family: "Glyphicons Halflings";
-  content: "\e150";
+  font-family: 'Glyphicons Halflings';
+  content: '\e150';
   /*
         display: inline-block;
         vertical-align: middle;
@@ -162,7 +150,7 @@ table.vue-table thead > tr > th {
 }
 
 .vue-table .arrow.asc:after {
-  content: "\e155";
+  content: '\e155';
   /*
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
@@ -171,7 +159,7 @@ table.vue-table thead > tr > th {
 }
 
 .vue-table .arrow.dsc:after {
-  content: "\e156";
+  content: '\e156';
 }
 
 .vue-table .editableField {
@@ -187,11 +175,11 @@ table.vue-table thead > tr > th {
     }*/
 </style>
 <script>
-import axios from "axios";
-import qs from "qs";
-import lodashorderby from "lodash.orderby";
-import lodashincludes from "lodash.includes";
-import lodashfindindex from "lodash.findindex";
+import axios from 'axios'
+import qs from 'qs'
+import lodashorderby from 'lodash.orderby'
+import lodashincludes from 'lodash.includes'
+import lodashfindindex from 'lodash.findindex'
 
 /* Field Section used for displaying and editing value of cell */
 var valueFieldSection = {
@@ -202,151 +190,151 @@ var valueFieldSection = {
     '  <span class="input-group-btn">' +
     '    <button class="btn btn-danger" type="button" @click="cancelThis" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>' +
     '    <button class="btn btn-primary" type="button" @click="saveThis" ><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>' +
-    "  </span>" +
-    "</div>",
-  props: ["entry", "columnname"],
+    '  </span>' +
+    '</div>',
+  props: ['entry', 'columnname'],
   data: function() {
     return {
       enabled: false,
-      datavalue: ""
-    };
+      datavalue: ''
+    }
   },
   methods: {
     saveThis: function() {
-      var originalValue = this.entry[this.columnname];
-      this.entry[this.columnname] = this.datavalue;
+      var originalValue = this.entry[this.columnname]
+      this.entry[this.columnname] = this.datavalue
       this.$parent.$emit(
-        "cellDataModifiedEvent",
+        'cellDataModifiedEvent',
         originalValue,
         this.datavalue,
         this.columnname,
         this.entry
-      );
-      this.enabled = !this.enabled;
+      )
+      this.enabled = !this.enabled
     },
     cancelThis: function() {
-      this.datavalue = this.entry[this.columnname];
-      this.enabled = !this.enabled;
+      this.datavalue = this.entry[this.columnname]
+      this.enabled = !this.enabled
     },
     toggleInput: function() {
-      this.datavalue = this.entry[this.columnname];
-      this.enabled = !this.enabled;
+      this.datavalue = this.entry[this.columnname]
+      this.enabled = !this.enabled
     }
   }
-};
+}
 
 export default {
-  name: "VueBootstrapTable",
+  name: 'VueBootstrapTable',
   components: {
-    "value-field-section": valueFieldSection
+    'value-field-section': valueFieldSection
   },
   props: {
     /**
-      * The column titles, required
-      */
+     * The column titles, required
+     */
     columns: {
       type: Array,
       required: true
     },
     /**
-      * The rows, an Array of objects
-      */
+     * The rows, an Array of objects
+     */
     values: {
       type: Array,
       required: false
     },
     /**
-      * Enable/disable table sorting, optional, default true
-      */
+     * Enable/disable table sorting, optional, default true
+     */
     sortable: {
       type: Boolean,
       required: false,
       default: true
     },
     /**
-      * Enable/disable table multicolumn sorting, optional, default false.
-      * Also sortable must be enabled for this function to work.
-      */
+     * Enable/disable table multicolumn sorting, optional, default false.
+     * Also sortable must be enabled for this function to work.
+     */
     multiColumnSortable: {
       type: Boolean,
       required: false,
       default: false
     },
     /**
-      * Enable/disable input filter, optional, default false
-      */
+     * Enable/disable input filter, optional, default false
+     */
     showFilter: {
       type: Boolean,
       required: false,
       default: false
     },
     /**
-      * Define if Filter search field is to work in a case Sensitive way. Default: true
-      */
+     * Define if Filter search field is to work in a case Sensitive way. Default: true
+     */
     filterCaseSensitive: {
       type: Boolean,
       required: false,
       default: true
     },
     /**
-      * Enable/disable column picker to show/hide table columns, optional, default false
-      */
+     * Enable/disable column picker to show/hide table columns, optional, default false
+     */
     showColumnPicker: {
       type: Boolean,
       required: false,
       default: false
     },
     /**
-      * Enable/disable pagination for the table, optional, default false
-      */
+     * Enable/disable pagination for the table, optional, default false
+     */
     paginated: {
       type: Boolean,
       required: false,
       default: false
     },
     /**
-      * If pagination is enabled defining the page size, optional, default 10
-      */
+     * If pagination is enabled defining the page size, optional, default 10
+     */
     pageSize: {
       type: Number,
       required: false,
       default: 10
     },
     /**
-      * Enable/disable page size change field, optional, default false
-      */
+     * Enable/disable page size change field, optional, default false
+     */
     pageSizes: {
       type: Array,
       required: false,
       default: [10, 25, 50, 100]
     },
     /**
-      * Enable/disable page size change field, optional, default [10]
-      */
+     * Enable/disable page size change field, optional, default [10]
+     */
     showPageResizer: {
       type: Boolean,
       required: false,
       default: false
     },
     /**
-      * If loading of table is to be done through ajax, then this object must be set
-      */
+     * If loading of table is to be done through ajax, then this object must be set
+     */
     ajax: {
       type: Object,
       required: false,
       default: function() {
         return {
           enabled: false,
-          url: "",
-          method: "GET",
+          url: '',
+          method: 'GET',
           delegate: false,
           axiosConfig: {}
-        };
+        }
       }
     },
     /**
-      * Function to handle row clicks
-      */
+     * Function to handle row clicks
+     */
     rowClickHandler: {
       type: Function,
       required: false,
@@ -356,7 +344,7 @@ export default {
   data: function() {
     return {
       filteredSize: 0,
-      filterKey: "",
+      filterKey: '',
       sortKey: [],
       sortOrders: {},
       sortChanged: 1,
@@ -367,79 +355,79 @@ export default {
       localPageSize: 10,
       echo: 0,
       loading: false
-    };
+    }
   },
   mounted: function() {
     this.$nextTick(function() {
-      this.loading = true;
-      this.setSortOrders();
-      var self = this;
+      this.loading = true
+      this.setSortOrders()
+      var self = this
       this.columns.forEach(function(column) {
-        var obj = self.buildColumnObject(column);
-        self.displayCols.push(obj);
-      });
+        var obj = self.buildColumnObject(column)
+        self.displayCols.push(obj)
+      })
       if (this.ajax.enabled) {
         if (!this.ajax.delegate) {
-          this.loading = true;
+          this.loading = true
           this.fetchData(function(data) {
-            self.values = data.data;
-            self.processFilter();
-          });
-        } else this.processFilter();
-      } else this.processFilter();
-    });
+            self.values = data.data
+            self.processFilter()
+          })
+        } else this.processFilter()
+      } else this.processFilter()
+    })
   },
   created: function() {
-    var self = this;
-    this.$on("cellDataModifiedEvent", self.fireCellDataModifiedEvent);
-    this.localPageSize = this.pageSize;
+    var self = this
+    this.$on('cellDataModifiedEvent', self.fireCellDataModifiedEvent)
+    this.localPageSize = this.pageSize
   },
   beforeDestroy: function() {
-    var self = this;
-    this.$off("cellDataModifiedEvent", self.fireCellDataModifiedEvent);
+    var self = this
+    this.$off('cellDataModifiedEvent', self.fireCellDataModifiedEvent)
   },
   watch: {
     values: function() {
-      this.processFilter();
+      this.processFilter()
     },
     columns: function() {
-      this.displayCols = [];
-      var self = this;
+      this.displayCols = []
+      var self = this
       this.columns.forEach(function(column) {
-        var obj = self.buildColumnObject(column);
-        self.displayCols.push(obj);
-      });
-      this.setSortOrders();
+        var obj = self.buildColumnObject(column)
+        self.displayCols.push(obj)
+      })
+      this.setSortOrders()
     },
     showFilter: function() {
-      this.filterKey = "";
+      this.filterKey = ''
     },
     showColumnPicker: function() {
-      this.columnMenuOpen = false;
+      this.columnMenuOpen = false
 
       this.displayCols.forEach(function(column) {
-        column.visible = true;
-      });
+        column.visible = true
+      })
     },
     filterKey: function() {
       // filter was updated, so resetting to page 1
-      this.page = 1;
-      this.processFilter();
+      this.page = 1
+      this.processFilter()
     },
     sortKey: function() {
-      this.processFilter();
+      this.processFilter()
     },
     sortChanged: function() {
-      this.processFilter();
+      this.processFilter()
     },
     page: function() {
-      this.processFilter();
+      this.processFilter()
     },
     paginated: function() {
-      this.processFilter();
+      this.processFilter()
     },
     localPageSize: function(newValue) {
-      if (newValue > this.filteredValues.length) this.processFilter();
+      if (newValue > this.filteredValues.length) this.processFilter()
     },
     loading: function() {
       /*document.getElementById("loadingdiv").style.width = document.getElementById("maindiv").getBoundingClientRect().width + "px";
@@ -448,38 +436,38 @@ export default {
   },
   computed: {
     displayColsVisible: function() {
-      var displayColsVisible = [];
+      var displayColsVisible = []
       for (var a in this.displayCols) {
         if (this.displayCols[a].visible)
-          displayColsVisible.push(this.displayCols[a]);
+          displayColsVisible.push(this.displayCols[a])
       }
-      return displayColsVisible;
+      return displayColsVisible
     },
     filteredValuesSorted: function() {
-      var tColsDir = [];
+      var tColsDir = []
       for (var i = 0, len = this.sortKey.length; i < len; i++) {
-        tColsDir.push(this.sortOrders[this.sortKey[i]].toLowerCase());
+        tColsDir.push(this.sortOrders[this.sortKey[i]].toLowerCase())
       }
-      return lodashorderby(this.filteredValues, this.sortKey, tColsDir);
+      return lodashorderby(this.filteredValues, this.sortKey, tColsDir)
     },
     validPageNumbers: function() {
       // 5 page max
-      var result = [];
-      var start = 1;
-      if (this.page > 3) start = this.page - 2;
+      var result = []
+      var start = 1
+      if (this.page > 3) start = this.page - 2
       for (var i = 0; start <= this.maxPage && i < 5; start++) {
-        result.push(start);
-        i++;
+        result.push(start)
+        i++
       }
-      return result;
+      return result
     },
     maxPage: function() {
-      return Math.ceil(this.filteredSize / this.localPageSize);
+      return Math.ceil(this.filteredSize / this.localPageSize)
     },
     showPaginationEtc: function() {
-      var temp = 1;
-      if (this.page > 3) temp = this.page - 2;
-      return temp + 4 < this.maxPage;
+      var temp = 1
+      if (this.page > 3) temp = this.page - 2
+      return temp + 4 < this.maxPage
     }
   },
   methods: {
@@ -490,140 +478,140 @@ export default {
       entry
     ) {
       this.$parent.$emit(
-        "cellDataModifiedEvent",
+        'cellDataModifiedEvent',
         originalValue,
         newValue,
         columnTitle,
         entry
-      );
+      )
     },
     processFilter: function() {
-      var self = this;
-      this.loading = true;
+      var self = this
+      this.loading = true
       if (this.ajax.enabled && this.ajax.delegate) {
         this.fetchData(function(data) {
-          self.filteredSize = data.filtered;
-          self.filteredValues = data.data;
-          self.loading = false;
-        });
+          self.filteredSize = data.filtered
+          self.filteredValues = data.data
+          self.loading = false
+        })
       } else {
         var result = this.values.filter(item => {
-          var good = false;
+          var good = false
           for (var col in self.displayColsVisible) {
             if (self.filterCaseSensitive) {
               if (
                 lodashincludes(
-                  item[self.displayColsVisible[col].name] + "",
-                  self.filterKey + ""
+                  item[self.displayColsVisible[col].name] + '',
+                  self.filterKey + ''
                 )
               ) {
-                good = true;
+                good = true
               }
             } else {
               if (
                 lodashincludes(
-                  (item[self.displayColsVisible[col].name] + "").toLowerCase(),
-                  (self.filterKey + "").toLowerCase()
+                  (item[self.displayColsVisible[col].name] + '').toLowerCase(),
+                  (self.filterKey + '').toLowerCase()
                 )
               ) {
-                good = true;
+                good = true
               }
             }
           }
-          return good;
-        });
+          return good
+        })
 
-        var tColsDir = [];
+        var tColsDir = []
         for (var i = 0, len = this.sortKey.length; i < len; i++) {
-          tColsDir.push(this.sortOrders[this.sortKey[i]].toLowerCase());
+          tColsDir.push(this.sortOrders[this.sortKey[i]].toLowerCase())
         }
 
-        result = lodashorderby(result, this.sortKey, tColsDir);
+        result = lodashorderby(result, this.sortKey, tColsDir)
 
-        this.filteredSize = result.length;
+        this.filteredSize = result.length
         if (this.paginated) {
-          var startIndex = (this.page - 1) * this.localPageSize;
-          var tIndex = 0;
-          var tempResult = [];
+          var startIndex = (this.page - 1) * this.localPageSize
+          var tIndex = 0
+          var tempResult = []
           while (tIndex < this.localPageSize) {
-            if (typeof result[startIndex + tIndex] !== "undefined")
-              tempResult.push(result[startIndex + tIndex]);
-            tIndex++;
+            if (typeof result[startIndex + tIndex] !== 'undefined')
+              tempResult.push(result[startIndex + tIndex])
+            tIndex++
           }
-          self.filteredValues = tempResult;
-        } else self.filteredValues = result;
-        self.loading = false;
+          self.filteredValues = tempResult
+        } else self.filteredValues = result
+        self.loading = false
       }
     },
     fetchData: function(dataCallBackFunction) {
-      var self = this;
+      var self = this
       var ajaxParameters = {
         params: {}
-      };
-      this.echo++;
+      }
+      this.echo++
       if (this.ajax.enabled && this.ajax.delegate) {
-        var tColsDir = [];
+        var tColsDir = []
         for (var i = 0, len = this.sortKey.length; i < len; i++) {
-          tColsDir.push(this.sortOrders[this.sortKey[i]].toLowerCase());
+          tColsDir.push(this.sortOrders[this.sortKey[i]].toLowerCase())
         }
-        if (this.ajax.method === "GET") {
+        if (this.ajax.method === 'GET') {
           //COPY
-          ajaxParameters = JSON.parse(JSON.stringify(this.ajax.axiosConfig));
-          ajaxParameters.params = {};
-          ajaxParameters.params.sortcol = this.sortKey;
-          ajaxParameters.params.sortdir = tColsDir;
-          ajaxParameters.params.filter = this.filterKey;
+          ajaxParameters = JSON.parse(JSON.stringify(this.ajax.axiosConfig))
+          ajaxParameters.params = {}
+          ajaxParameters.params.sortcol = this.sortKey
+          ajaxParameters.params.sortdir = tColsDir
+          ajaxParameters.params.filter = this.filterKey
           if (self.paginated) {
-            ajaxParameters.params.page = this.page;
-            ajaxParameters.params.pagesize = this.localPageSize;
+            ajaxParameters.params.page = this.page
+            ajaxParameters.params.pagesize = this.localPageSize
           } else {
-            ajaxParameters.params.page = 1;
-            ajaxParameters.params.pagesize = null;
+            ajaxParameters.params.page = 1
+            ajaxParameters.params.pagesize = null
           }
-          ajaxParameters.params.echo = this.echo;
+          ajaxParameters.params.echo = this.echo
         }
-        if (this.ajax.method === "POST") {
-          ajaxParameters.sortcol = this.sortKey;
-          ajaxParameters.sortdir = tColsDir;
-          ajaxParameters.filter = this.filterKey;
+        if (this.ajax.method === 'POST') {
+          ajaxParameters.sortcol = this.sortKey
+          ajaxParameters.sortdir = tColsDir
+          ajaxParameters.filter = this.filterKey
           if (self.paginated) {
-            ajaxParameters.page = this.page;
-            ajaxParameters.pagesize = this.localPageSize;
+            ajaxParameters.page = this.page
+            ajaxParameters.pagesize = this.localPageSize
           } else {
-            ajaxParameters.page = 1;
-            ajaxParameters.pagesize = null;
+            ajaxParameters.page = 1
+            ajaxParameters.pagesize = null
           }
-          ajaxParameters.echo = this.echo;
+          ajaxParameters.echo = this.echo
         }
         //console.log(JSON.stringify(ajaxParameters));
       }
       if (this.ajax.enabled && !this.ajax.delegate) {
-        if (this.ajax.method === "GET") {
+        if (this.ajax.method === 'GET') {
           //COPY
-          ajaxParameters = JSON.parse(JSON.stringify(this.ajax.axiosConfig));
-          ajaxParameters.params = {};
+          ajaxParameters = JSON.parse(JSON.stringify(this.ajax.axiosConfig))
+          ajaxParameters.params = {}
         }
-        if (this.ajax.method === "POST") {
+        if (this.ajax.method === 'POST') {
           // Do nothing at this point !
         }
       }
-      if (this.ajax.enabled && this.ajax.method === "GET") {
+      if (this.ajax.enabled && this.ajax.method === 'GET') {
         axios
           .get(self.ajax.url, ajaxParameters)
           .then(response => {
             if (this.ajax.delegate) {
               if (response.data.echo !== self.echo) {
-                return;
+                return
               }
             }
-            dataCallBackFunction(response.data);
-            this.$parent.$emit("ajaxLoadedEvent", response.data);
+            dataCallBackFunction(response.data)
+            this.$parent.$emit('ajaxLoadedEvent', response.data)
           })
           .catch(e => {
-            this.$parent.$emit("ajaxLoadingError", e);
-          });
+            this.$parent.$emit('ajaxLoadingError', e)
+          })
       }
-      if (this.ajax.enabled && this.ajax.method === "POST") {
+      if (this.ajax.enabled && this.ajax.method === 'POST') {
         axios
           .post(
             self.ajax.url,
@@ -633,113 +621,112 @@ export default {
           .then(response => {
             if (this.ajax.delegate) {
               if (response.data.echo !== self.echo) {
-                return;
+                return
               }
             }
 
-            dataCallBackFunction(response.data);
-            this.$parent.$emit("ajaxLoadedEvent", response.data);
+            dataCallBackFunction(response.data)
+            this.$parent.$emit('ajaxLoadedEvent', response.data)
           })
           .catch(e => {
-            this.$parent.$emit("ajaxLoadingError", e);
-          });
+            this.$parent.$emit('ajaxLoadingError', e)
+          })
       }
     },
     buildColumnObject: function(column) {
-      var obj = {};
-      obj.title = column.title;
-      if (typeof column.name !== "undefined") obj.name = column.name;
-      else obj.name = column.title;
-      if (typeof column.visible !== "undefined") obj.visible = column.visible;
-      else obj.visible = true;
-      if (typeof column.editable !== "undefined")
-        obj.editable = column.editable;
-      else obj.editable = false;
-      if (typeof column.renderfunction !== "undefined")
-        obj.renderfunction = column.renderfunction;
-      else obj.renderfunction = false;
-      if (typeof column.columnstyle !== "undefined")
-        obj.columnstyle = column.columnstyle;
-      else obj.columnstyle = "";
-      if (typeof column.cellstyle !== "undefined")
-        obj.cellstyle = column.cellstyle;
-      else obj.cellstyle = "";
+      var obj = {}
+      obj.title = column.title
+      if (typeof column.name !== 'undefined') obj.name = column.name
+      else obj.name = column.title
+      if (typeof column.visible !== 'undefined') obj.visible = column.visible
+      else obj.visible = true
+      if (typeof column.editable !== 'undefined') obj.editable = column.editable
+      else obj.editable = false
+      if (typeof column.renderfunction !== 'undefined')
+        obj.renderfunction = column.renderfunction
+      else obj.renderfunction = false
+      if (typeof column.columnstyle !== 'undefined')
+        obj.columnstyle = column.columnstyle
+      else obj.columnstyle = ''
+      if (typeof column.cellstyle !== 'undefined')
+        obj.cellstyle = column.cellstyle
+      else obj.cellstyle = ''
 
-      return obj;
+      return obj
     },
     setSortOrders: function() {
-      this.sortKey = [];
-      var sortOrders = {};
+      this.sortKey = []
+      var sortOrders = {}
       this.columns.forEach(function(column) {
-        sortOrders[column.name] = "";
-      });
-      this.sortOrders = sortOrders;
+        sortOrders[column.name] = ''
+      })
+      this.sortOrders = sortOrders
     },
     sortBy: function(event, key) {
       if (this.sortable) {
-        var self = this;
+        var self = this
 
         if (
           !this.multiColumnSortable ||
           (this.multiColumnSortable && !event.shiftKey)
         ) {
-          this.sortKey = [key];
+          this.sortKey = [key]
           this.columns.forEach(function(column) {
             if (column.name !== key) {
-              self.sortOrders[column.name] = "";
+              self.sortOrders[column.name] = ''
             }
-          });
+          })
         } else {
           if (
             lodashfindindex(this.sortKey, function(o) {
-              return o === key;
+              return o === key
             }) === -1
           ) {
-            this.sortKey.push(key);
+            this.sortKey.push(key)
           }
         }
-        if (this.sortOrders[key] === "") {
-          this.sortOrders[key] = "ASC";
-        } else if (this.sortOrders[key] === "ASC") {
-          this.sortOrders[key] = "DESC";
+        if (this.sortOrders[key] === '') {
+          this.sortOrders[key] = 'ASC'
+        } else if (this.sortOrders[key] === 'ASC') {
+          this.sortOrders[key] = 'DESC'
         } else {
-          this.sortOrders[key] = "ASC";
+          this.sortOrders[key] = 'ASC'
         }
 
-        this.sortChanged = this.sortChanged * -1;
+        this.sortChanged = this.sortChanged * -1
       }
     },
     getClasses: function(column) {
-      var classes = [column.columnstyle];
-      var key = column.name;
+      var classes = [column.columnstyle]
+      var key = column.name
       if (this.sortable) {
-        classes.push("arrow");
+        classes.push('arrow')
         /*if (this.sortKey === key) {
                         classes.push("active");
                     }*/
         if (
           lodashfindindex(this.sortKey, function(o) {
-            return o === key;
+            return o === key
           }) !== -1
         ) {
-          classes.push("active");
+          classes.push('active')
         }
 
-        if (this.sortOrders[key] === "ASC") {
-          classes.push("asc");
-        } else if (this.sortOrders[key] === "DESC") {
-          classes.push("dsc");
+        if (this.sortOrders[key] === 'ASC') {
+          classes.push('asc')
+        } else if (this.sortOrders[key] === 'DESC') {
+          classes.push('dsc')
         }
       }
-      return classes;
+      return classes
     },
     toggleColumn: function(column) {
-      column.visible = !column.visible;
+      column.visible = !column.visible
     },
     closeDropdown: function() {
-      this.columnMenuOpen = false;
+      this.columnMenuOpen = false
     }
   },
   events: {}
-};
+}
 </script>
